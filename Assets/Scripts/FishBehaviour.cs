@@ -1,12 +1,9 @@
-﻿using UnityEngine;
-
-namespace Assets.Scripts {
+﻿namespace Assets.Scripts {
     public class FishBehaviour : PickUpBehaviour {
-        [SerializeField]
-        private ScoreBehaviour _scoreBehaviour;
+        public ScoreBehaviour ScoreBehaviour;
 
         protected override void PickedUp() {
-            _scoreBehaviour.Score++;
+            ScoreBehaviour.Score++;
         }
     }
 }

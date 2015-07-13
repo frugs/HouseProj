@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: f0e6e699cf510d1448925c760937b4fa
+timeCreated: 1436829932
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - _scoreBehaviour: {instanceID: 0}
+  - _platformLeftPrefab: {fileID: 100004, guid: 93f8eef35873d40988621835aaa5a9ca,
+      type: 2}
+  - _platformMiddlePrefab: {fileID: 100004, guid: d8366257ad11141529f2883f4b0643aa,
+      type: 2}
+  - _platformRightPrefab: {fileID: 100004, guid: dcdbdd523c1424385beb90aa26e7822f,
+      type: 2}
+  - _fishFactory: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
