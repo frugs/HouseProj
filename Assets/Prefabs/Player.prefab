@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11428092}
   - 114: {fileID: 11451876}
   m_Layer: 0
-  m_Name: CharacterRobotBoy
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8499999, y: -1.16999996, z: 0}
+  m_LocalPosition: {x: -5.81950998, y: -1.31099999, z: 0}
   m_LocalScale: {x: 1.77153289, y: 1.77153039, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -117,9 +117,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -.449999988}
+  m_Offset: {x: -.200000003, y: -.174999997}
   serializedVersion: 2
-  m_Radius: .159999996
+  m_Radius: .5
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -130,9 +130,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: .200000003, y: .100000001}
   serializedVersion: 2
-  m_Size: {x: .25, y: .680000007}
+  m_Size: {x: 1, y: .600000024}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79529bcd09b144e318911a1e718d6c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxSpeed: 2
-  m_JumpForce: 400
+  m_MaxSpeed: 5
+  m_JumpForce: 700
   m_CrouchSpeed: 1.5
   m_AirControl: 1
   m_WhatIsGround:
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1783731295
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8fb98a6035269e64a998f9b56828fc4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b5f878f3aae98c4ebc3cea748a31676, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
