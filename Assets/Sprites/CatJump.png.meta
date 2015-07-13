@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: ec1c63a5783e7bc41a4c39bdbc00ebbd
+timeCreated: 1436813099
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CatJump_0
+    21300002: CatJump_1
+    21300004: CatJump_2
+    21300006: CatJump_3
+    21300008: CatJump_4
+    21300010: CatJump_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 650
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CatJump_0
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 1047
+        width: 995
+        height: 912
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatJump_1
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1043
+        width: 1003
+        height: 890
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatJump_2
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 1049
+        width: 1011
+        height: 857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatJump_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 22
+        width: 1117
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatJump_4
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 69
+        width: 1323
+        height: 931
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatJump_5
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 105
+        width: 1281
+        height: 905
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
