@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r4.1">
+    <folder id="0" name="Cat">
+        <file id="0" name="Cat/body.png" width="729" height="369" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="Cat/head_norm.png" width="666" height="486" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="body_008">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-388.635616" y="157.585012" scale_x="0.910585" scale_y="0.829975"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="head_norm">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-125.454545" y="430.909091" angle="354.289407" scale_x="1" scale_y="1"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
