@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 4b5f878f3aae98c4ebc3cea748a31676
+timeCreated: 1436812533
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CatWalk_0
+    21300002: CatWalk_1
+    21300004: CatWalk_2
+    21300006: CatWalk_3
+    21300008: CatWalk_4
+    21300010: CatWalk_5
+    21300012: CatWalk_6
+    21300014: CatWalk_7
+    21300016: CatWalk_8
+    21300018: CatWalk_9
+    21300020: CatWalk_10
+    21300022: CatWalk_11
+    21300024: CatWalk_12
+    21300026: CatWalk_13
+    21300028: CatWalk_14
+    21300030: CatWalk_15
+    21300032: CatWalk_16
+    21300034: CatWalk_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 650
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CatWalk_0
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 3932
+        width: 992
+        height: 914
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_1
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 3929
+        width: 1006
+        height: 919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_2
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 3929
+        width: 1017
+        height: 920
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_3
+      rect:
+        serializedVersion: 2
+        x: 4148
+        y: 3929
+        width: 1028
+        height: 922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_4
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 2954
+        width: 1039
+        height: 919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_5
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 2957
+        width: 1051
+        height: 911
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_6
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 2959
+        width: 1061
+        height: 907
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_7
+      rect:
+        serializedVersion: 2
+        x: 4103
+        y: 2949
+        width: 1074
+        height: 912
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1962
+        width: 1086
+        height: 913
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_9
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 1954
+        width: 1101
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_10
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 1951
+        width: 1112
+        height: 909
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_11
+      rect:
+        serializedVersion: 2
+        x: 4041
+        y: 1954
+        width: 1137
+        height: 894
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 986
+        width: 1162
+        height: 876
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_13
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 992
+        width: 1135
+        height: 878
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_14
+      rect:
+        serializedVersion: 2
+        x: 2789
+        y: 1004
+        width: 1089
+        height: 889
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_15
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 1009
+        width: 1064
+        height: 904
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_16
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 33
+        width: 1040
+        height: 905
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatWalk_17
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 25
+        width: 1017
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
