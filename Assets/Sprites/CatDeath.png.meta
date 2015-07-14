@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 356e0a65f42d8be4daaca57b0e273f73
+timeCreated: 1436886270
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CatDeath_0
+    21300002: CatDeath_1
+    21300004: CatDeath_2
+    21300006: CatDeath_3
+    21300008: CatDeath_4
+    21300010: CatDeath_5
+    21300012: CatDeath_6
+    21300014: CatDeath_7
+    21300016: CatDeath_8
+    21300018: CatDeath_9
+    21300020: CatDeath_10
+    21300022: CatDeath_11
+    21300024: CatDeath_12
+    21300026: CatDeath_13
+    21300028: CatDeath_14
+    21300030: CatDeath_15
+    21300032: CatDeath_16
+    21300034: CatDeath_17
+    21300036: CatDeath_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 650
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CatDeath_0
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 3107
+        width: 1022
+        height: 910
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_1
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 3101
+        width: 1042
+        height: 933
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_2
+      rect:
+        serializedVersion: 2
+        x: 3266
+        y: 3126
+        width: 1061
+        height: 923
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_3
+      rect:
+        serializedVersion: 2
+        x: 4697
+        y: 3152
+        width: 1101
+        height: 913
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 2145
+        width: 1159
+        height: 905
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_5
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 2165
+        width: 1218
+        height: 899
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_6
+      rect:
+        serializedVersion: 2
+        x: 3089
+        y: 2187
+        width: 1281
+        height: 894
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_7
+      rect:
+        serializedVersion: 2
+        x: 4520
+        y: 2197
+        width: 1308
+        height: 881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1171
+        width: 1324
+        height: 869
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_9
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 1177
+        width: 1332
+        height: 859
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_10
+      rect:
+        serializedVersion: 2
+        x: 3026
+        y: 1183
+        width: 1335
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_11
+      rect:
+        serializedVersion: 2
+        x: 4478
+        y: 1188
+        width: 1331
+        height: 797
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 161
+        width: 1320
+        height: 745
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_13
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 201
+        width: 1258
+        height: 668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_14
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 226
+        width: 1274
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_15
+      rect:
+        serializedVersion: 2
+        x: 4421
+        y: 249
+        width: 1295
+        height: 561
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_16
+      rect:
+        serializedVersion: 2
+        x: 5736
+        y: 625
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_17
+      rect:
+        serializedVersion: 2
+        x: 4302
+        y: 565
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDeath_18
+      rect:
+        serializedVersion: 2
+        x: 2859
+        y: 511
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

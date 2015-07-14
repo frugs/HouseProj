@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: d1b91557a28591b499150a988920b3f6
+timeCreated: 1436886383
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CatDuck_0
+    21300002: CatDuck_1
+    21300004: CatDuck_2
+    21300006: CatDuck_3
+    21300008: CatDuck_4
+    21300010: CatDuck_5
+    21300012: CatDuck_6
+    21300014: CatDuck_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 650
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: CatDuck_0
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1069
+        width: 993
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_1
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 1044
+        width: 993
+        height: 942
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_2
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 1053
+        width: 1071
+        height: 940
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_3
+      rect:
+        serializedVersion: 2
+        x: 4511
+        y: 1061
+        width: 1175
+        height: 908
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 66
+        width: 1262
+        height: 829
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_5
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 108
+        width: 1354
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_6
+      rect:
+        serializedVersion: 2
+        x: 2894
+        y: 147
+        width: 1410
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatDuck_7
+      rect:
+        serializedVersion: 2
+        x: 4330
+        y: 147
+        width: 1410
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
