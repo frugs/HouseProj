@@ -7,7 +7,7 @@ namespace Assets.Scripts {
     public class LevelGenerator {
         // TODO: This is pretty hacky and questionable
         private const float PlatformWidth = 2f;
-        private const float LargeGapMultiplier = 1.75f;
+        private const float LargeGapMultiplier = 1.5f;
         private const float FishParabolaHeight = 2f;
         private const float CrouchHeight = 0.75f;
 

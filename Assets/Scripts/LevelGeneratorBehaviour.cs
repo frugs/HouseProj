@@ -42,7 +42,7 @@ namespace Assets.Scripts {
         private int _sectionCount = 100;
 
         [SerializeField]
-        private float _gapSize = 2.5f;
+        private float _gapSize = 4f;
 
         private LevelGenerator _levelGenerator;
         

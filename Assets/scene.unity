@@ -857,7 +857,7 @@ MonoBehaviour:
     type: 2}
   _fishFactory: {fileID: 327437907}
   _sectionCount: 100
-  _gapSize: 2.5
+  _gapSize: 4
 --- !u!4 &368799103 stripped
 Transform:
   m_PrefabParentObject: {fileID: 406036, guid: fdd15e786b30c464aacd1a859375198a, type: 2}
