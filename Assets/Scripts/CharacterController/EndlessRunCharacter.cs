@@ -110,7 +110,6 @@ namespace Assets.Scripts.Character
 
 		public void Kill ()
 		{
-			Debug.Log ("Player Died");
 			m_Anim.SetTrigger ("Die");
 		}
 	}
