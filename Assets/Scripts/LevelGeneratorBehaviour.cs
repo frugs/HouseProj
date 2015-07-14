@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts {
@@ -37,15 +36,15 @@ namespace Assets.Scripts {
         [SerializeField]
         private FishFactoryBehaviour _fishFactory;
 
-        // TODO: This doesn't end up being the actual section count
+        // TODO: This doesn't end up being the actual number of generated segments
         [SerializeField]
-        private int _sectionCount = 100;
+        private readonly int _sectionCount = 100;
 
         [SerializeField]
-        private float _gapSize = 4f;
+        private readonly float _gapSize = 4f;
 
         private LevelGenerator _levelGenerator;
-        
+
         public void Awake() {
             _levelGenerator = new LevelGenerator(_platformLeftPrefab,
                                                  _platformMiddlePrefab,
