@@ -1,6 +1,5 @@
-using System;
+using Assets.Scripts.AlternativeInput;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 namespace Assets.Scripts.Character
 {
@@ -23,7 +22,7 @@ namespace Assets.Scripts.Character
 			if (!m_Jump)
 			{
 				// Read the jump input in Update so button presses aren't missed.
-			    m_Jump = Input.GetButtonDown("Jump");
+			    m_Jump = Input.GetButtonDown("Jump") || TouchInputBehaviour.GetJump();
 			}
 		}
 		
@@ -31,7 +30,7 @@ namespace Assets.Scripts.Character
 		private void FixedUpdate()
 		{
 			// Read the inputs.
-		    bool crouch = Input.GetButton("Crouch");
+		    bool crouch = Input.GetButton("Crouch") || TouchInputBehaviour.GetCrouch();
 			m_Character.ApplyControl(m_RunForce, crouch, m_Jump);
 			m_Jump = false;
 		}
