@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d1b91557a28591b499150a988920b3f6
-timeCreated: 1436886383
+timeCreated: 1436888815
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,80 +60,80 @@ TextureImporter:
     - name: CatDuck_0
       rect:
         serializedVersion: 2
-        x: 332
-        y: 1069
-        width: 993
-        height: 914
+        x: 0
+        y: 1045
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_1
       rect:
         serializedVersion: 2
-        x: 1785
-        y: 1044
-        width: 993
-        height: 942
+        x: 1430
+        y: 1045
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_2
       rect:
         serializedVersion: 2
-        x: 3160
-        y: 1053
-        width: 1071
-        height: 940
+        x: 2860
+        y: 1045
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_3
       rect:
         serializedVersion: 2
-        x: 4511
-        y: 1061
-        width: 1175
-        height: 908
+        x: 4290
+        y: 1045
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_4
       rect:
         serializedVersion: 2
-        x: 136
-        y: 66
-        width: 1262
-        height: 829
+        x: 0
+        y: 0
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_5
       rect:
         serializedVersion: 2
-        x: 1519
-        y: 108
-        width: 1354
-        height: 628
+        x: 1430
+        y: 0
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_6
       rect:
         serializedVersion: 2
-        x: 2894
-        y: 147
-        width: 1410
-        height: 482
+        x: 2860
+        y: 0
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: CatDuck_7
       rect:
         serializedVersion: 2
-        x: 4330
-        y: 147
-        width: 1410
-        height: 482
+        x: 4290
+        y: 0
+        width: 1430
+        height: 1045
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
