@@ -14,9 +14,8 @@ namespace Assets.Scripts {
         private readonly GameObject _platformLeftPrefab;
         private readonly GameObject _platformMiddlePrefab;
         private readonly GameObject _platformRightPrefab;
-        private readonly GameObject _floatingBlockLeftPrefab;
-        private readonly GameObject _floatingBlockMiddlePrefab;
-        private readonly GameObject _floatingBlockRightPrefab;
+
+        private readonly FloatingBlockFactoryBehaviour _floatingBlockFactory;
         private readonly FishFactoryBehaviour _fishFactory;
 
         private readonly float _gapSize;
@@ -28,21 +27,17 @@ namespace Assets.Scripts {
         public LevelGenerator(GameObject platformLeftPrefab,
                               GameObject platformMiddlePrefab,
                               GameObject platformRightPrefab,
-                              GameObject floatingBlockLeftPrefab,
-                              GameObject floatingBlockMiddlePrefab,
-                              GameObject floatingBlockRightPrefab,
+                              FloatingBlockFactoryBehaviour floatingBlockFactory,
                               FishFactoryBehaviour fishFactory,
                               float gapSize,
                               Vector2 origin) {
             _platformLeftPrefab = platformLeftPrefab;
             _platformMiddlePrefab = platformMiddlePrefab;
             _platformRightPrefab = platformRightPrefab;
+            _floatingBlockFactory = floatingBlockFactory;
             _fishFactory = fishFactory;
             _gapSize = gapSize;
             _origin = origin;
-            _floatingBlockLeftPrefab = floatingBlockLeftPrefab;
-            _floatingBlockMiddlePrefab = floatingBlockMiddlePrefab;
-            _floatingBlockRightPrefab = floatingBlockRightPrefab;
         }
 
         public void GenerateLevel(IEnumerable<Section> sections) {
@@ -76,11 +71,11 @@ namespace Assets.Scripts {
                     }
                 } else if (section == Section.FloatingBlock) {
                     if (previousSection.IsGap()) {
-                        CreateLeftPlatform(); 
+                        CreateLeftPlatform();
                         _progress += PlatformWidth;
 
                         CreateLeftFloatingBlock();
-                        
+
                         CreateMiddlePlatform();
                         _progress += PlatformWidth;
                     } else {
@@ -102,21 +97,18 @@ namespace Assets.Scripts {
         }
 
         private void CreateLeftFloatingBlock() {
-            Object.Instantiate(_floatingBlockLeftPrefab,
-                               new Vector2(_origin.x + _progress - (PlatformWidth / 2), _origin.y + CrouchHeight),
-                               Quaternion.identity);
+            var position = new Vector2(_origin.x + _progress - (PlatformWidth / 2), _origin.y + CrouchHeight);
+            _floatingBlockFactory.CreateLeft(position);
         }
 
         private void CreateMiddleFloatingBlock() {
-            Object.Instantiate(_floatingBlockMiddlePrefab,
-                               new Vector2(_origin.x + _progress - (PlatformWidth / 2), _origin.y + CrouchHeight),
-                               Quaternion.identity);
+            var position = new Vector2(_origin.x + _progress - (PlatformWidth / 2), _origin.y + CrouchHeight);
+            _floatingBlockFactory.CreateMiddle(position);
         }
 
         private void CreateRightFloatingBlock() {
-            Object.Instantiate(_floatingBlockRightPrefab,
-                               new Vector2(_origin.x + _progress - (PlatformWidth / 2), _origin.y + CrouchHeight),
-                               Quaternion.identity);
+            var position = new Vector2(_origin.x + _progress - (PlatformWidth / 2), _origin.y + CrouchHeight);
+            _floatingBlockFactory.CreateRight(position);
         }
 
         private void CreateMiddlePlatform() {
