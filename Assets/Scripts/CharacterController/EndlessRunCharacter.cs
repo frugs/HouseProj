@@ -19,8 +19,9 @@ namespace Assets.Scripts.Character
 		private Animator m_Anim;            // Reference to the player's animator component.
 		private Rigidbody2D m_Rigidbody2D;
 		private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-		
-		private void Awake()
+	    private bool _isDead;
+
+	    private void Awake()
 		{
 			// Setting up references.
 			m_GroundCheck = transform.Find("GroundCheck");
@@ -61,40 +62,41 @@ namespace Assets.Scripts.Character
 			
 			// Set whether or not the character is crouching in the animator
 			m_Anim.SetBool("Crouch", crouch);
-			
-			//only control the player if grounded or airControl is turned on
-			if (m_Grounded || m_AirControl)
-			{
-				// Reduce the speed if crouching by the crouchSpeed multiplier
-				move = (crouch ? move*m_CrouchSpeed : move);
-				
-				// The Speed animator parameter is set to the absolute value of the horizontal input.
-				m_Anim.SetFloat("Speed", Mathf.Abs(move));
-				
-				// Move the character
-				m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
-				
-				// If the input is moving the player right and the player is facing left...
-				if (move > 0 && !m_FacingRight)
-				{
-					// ... flip the player.
-					Flip();
-				}
-				// Otherwise if the input is moving the player left and the player is facing right...
-				else if (move < 0 && m_FacingRight)
-				{
-					// ... flip the player.
-					Flip();
-				}
-			}
-			// If the player should jump...
-			if (m_Grounded && !crouch && jump && m_Anim.GetBool("Ground"))
-			{
-				// Add a vertical force to the player.
-				m_Grounded = false;
-				m_Anim.SetBool("Ground", false);
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			}
+
+		    if (!_isDead) {
+		        //only control the player if grounded or airControl is turned on
+		        if (m_Grounded || m_AirControl) 
+                {
+		            // Reduce the speed if crouching by the crouchSpeed multiplier
+		            move = (crouch ? move * m_CrouchSpeed : move);
+
+		            // The Speed animator parameter is set to the absolute value of the horizontal input.
+		            m_Anim.SetFloat("Speed", Mathf.Abs(move));
+
+		            // Move the character
+		            m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+
+		            // If the input is moving the player right and the player is facing left...
+		            if (move > 0 && !m_FacingRight) {
+		                // ... flip the player.
+		                Flip();
+		            }
+		            // Otherwise if the input is moving the player left and the player is facing right...
+		            else if (move < 0 && m_FacingRight) {
+		                // ... flip the player.
+		                Flip();
+		            }
+		        }
+
+		        // If the player should jump...
+		        if (m_Grounded && !crouch && jump && m_Anim.GetBool("Ground"))
+                {
+		            // Add a vertical force to the player.
+		            m_Grounded = false;
+		            m_Anim.SetBool("Ground", false);
+		            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+		        }
+		    }
 		}
 		
 		private void Flip()
@@ -108,8 +110,9 @@ namespace Assets.Scripts.Character
 			transform.localScale = theScale;
 		}
 
-		public void Kill ()
-		{
+		public void Kill () 
+        {
+		    _isDead = true;
 			m_Anim.SetTrigger ("Die");
 		}
 	}
