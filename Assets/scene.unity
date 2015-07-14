@@ -849,6 +849,8 @@ MonoBehaviour:
     type: 2}
   _platformRightPrefab: {fileID: 100004, guid: dcdbdd523c1424385beb90aa26e7822f, type: 2}
   _fishFactory: {fileID: 327437907}
+  _sectionCount: 100
+  _gapSize: 2.5
 --- !u!1001 &434307037
 Prefab:
   m_ObjectHideFlags: 0
