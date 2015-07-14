@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: d0749de99d38c5440a5dbe224503cdea
-timeCreated: 1436815168
+timeCreated: 1436883597
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: CatLand_0
+    21300002: CatLand_1
+    21300004: CatLand_2
+    21300006: CatLand_3
+    21300008: CatLand_4
+    21300010: CatLand_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,25 +36,85 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 650
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: CatLand_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1362
+        width: 1278
+        height: 1185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatLand_1
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1360
+        width: 1233
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatLand_2
+      rect:
+        serializedVersion: 2
+        x: 2860
+        y: 1358
+        width: 1145
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatLand_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 72
+        width: 1082
+        height: 981
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatLand_4
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 50
+        width: 1107
+        height: 934
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CatLand_5
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 35
+        width: 1132
+        height: 880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

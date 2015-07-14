@@ -6,8 +6,15 @@ using UnityEngine;
 namespace Assets.Scripts {
     public enum Section {
         Ground,
+        FloatingBlock,
         SmallGap,
         LargeGap
+    }
+
+    public static class SectionExtensions {
+           public static bool IsGap(this Section section) {
+               return section == Section.SmallGap || section == Section.LargeGap;
+           }
     }
 
     public class SectionGenerator {
