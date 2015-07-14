@@ -2,6 +2,7 @@
 using UnityEngine;
 
 namespace Assets.Scripts {
+    [RequireComponent(typeof (FishFactoryBehaviour), typeof (FloatingBlockFactoryBehaviour))]
     public class LevelGeneratorBehaviour : MonoBehaviour {
         private static readonly IDictionary<Section, float> SectionWeights = new Dictionary<Section, float> {
             {Section.Ground, 4f},
@@ -33,9 +34,6 @@ namespace Assets.Scripts {
         [SerializeField]
         private GameObject _floatingBlockRightPrefab;
 
-        [SerializeField]
-        private FishFactoryBehaviour _fishFactory;
-
         // TODO: This doesn't end up being the actual number of generated segments
         [SerializeField]
         private readonly int _sectionCount = 100;
@@ -49,10 +47,8 @@ namespace Assets.Scripts {
             _levelGenerator = new LevelGenerator(_platformLeftPrefab,
                                                  _platformMiddlePrefab,
                                                  _platformRightPrefab,
-                                                 _floatingBlockLeftPrefab,
-                                                 _floatingBlockMidPrefab,
-                                                 _floatingBlockRightPrefab,
-                                                 _fishFactory,
+                                                 GetComponent<FloatingBlockFactoryBehaviour>(),
+                                                 GetComponent<FishFactoryBehaviour>(),
                                                  _gapSize,
                                                  transform.position);
         }
