@@ -37,7 +37,7 @@ namespace Assets.Scripts {
         private LevelGenerator _levelGenerator;
 
         public void Awake() {
-            _levelGenerator = new LevelGenerator(_platformRightPrefab,
+            _levelGenerator = new LevelGenerator(_platformLeftPrefab,
                                                  _platformMiddlePrefab,
                                                  _platformRightPrefab,
                                                  _fishFactory,
