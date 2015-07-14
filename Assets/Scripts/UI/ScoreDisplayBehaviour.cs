@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace Assets.Scripts.UI {
     [RequireComponent(typeof(Text))]
@@ -14,7 +15,7 @@ namespace Assets.Scripts.UI {
         }
 
         public void LateUpdate() {
-            _text.text = _score.Score.ToString();
+			_text.text = "Fish: " + _score.Score.ToString() + "\nTime: " + String.Format("{0:F}", Time.timeSinceLevelLoad);
         }
     }
 }

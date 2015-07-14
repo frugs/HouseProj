@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace Assets.Scripts {
     
@@ -15,7 +16,7 @@ namespace Assets.Scripts {
         }
         
         public void Update() {
-            _text.text = _scoreBehaviour.Score + " fish!";
+			_text.text = _scoreBehaviour.Score + " fish!\nYou Survived " + String.Format("{0:#,###}", Time.timeSinceLevelLoad) + " Seconds";
         }
     }
 }
