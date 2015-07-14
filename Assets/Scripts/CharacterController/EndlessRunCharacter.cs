@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace HouseProj.Character
+namespace Assets.Scripts.Character
 {
 	public class EndlessRunCharacter : MonoBehaviour
 	{
@@ -12,7 +12,7 @@ namespace HouseProj.Character
 		[SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 		
 		private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-		const float k_GroundedRadius = .4f; // Radius of the overlap circle to determine if grounded
+		const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
 		private bool m_Grounded;            // Whether or not the player is grounded.
 		private Transform m_CeilingCheck;   // A position marking where to check for ceilings
 		const float k_CeilingRadius = .4f; // Radius of the overlap circle to determine if the player can stand up
@@ -28,7 +28,6 @@ namespace HouseProj.Character
 			m_Anim = GetComponent<Animator>();
 			m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		}
-		
 		
 		private void FixedUpdate()
 		{
@@ -48,11 +47,10 @@ namespace HouseProj.Character
 			m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
 		}
 		
-		
 		public void ApplyControl(float move, bool crouch, bool jump)
 		{
 			// If crouching, check to see if the character can stand up
-			if (!crouch && m_Anim.GetBool("Crouch"))
+			if (!crouch && m_Grounded && m_Anim.GetBool("Crouch"))
 			{
 				// If the character has a ceiling preventing them from standing up, keep them crouching
 				if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
@@ -90,7 +88,7 @@ namespace HouseProj.Character
 				}
 			}
 			// If the player should jump...
-			if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+			if (m_Grounded && !crouch && jump && m_Anim.GetBool("Ground"))
 			{
 				// Add a vertical force to the player.
 				m_Grounded = false;
@@ -98,7 +96,6 @@ namespace HouseProj.Character
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			}
 		}
-		
 		
 		private void Flip()
 		{
@@ -109,6 +106,12 @@ namespace HouseProj.Character
 			Vector3 theScale = transform.localScale;
 			theScale.x *= -1;
 			transform.localScale = theScale;
+		}
+
+		public void Kill ()
+		{
+			Debug.Log ("Player Died");
+			m_Anim.SetTrigger ("Die");
 		}
 	}
 }

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-namespace HouseProj.Character
+namespace Assets.Scripts.Character
 {
 	[RequireComponent(typeof (EndlessRunCharacter))]
 	public class EndlessRunController : MonoBehaviour
