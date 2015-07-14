@@ -14,9 +14,9 @@ namespace Assets.Scripts {
         public void Awake() {
             _text = GetComponent<Text>();
         }
-        
-        public void Update() {
-			_text.text = _scoreBehaviour.Score + " fish!\nYou Survived " + String.Format("{0:#,###}", Time.timeSinceLevelLoad) + " Seconds";
+
+        public void OnEnable() {
+            _text.text = _scoreBehaviour.Score + " fish!\nYou Survived " + String.Format("{0:#,###}", Time.timeSinceLevelLoad) + " Seconds";            
         }
     }
 }
