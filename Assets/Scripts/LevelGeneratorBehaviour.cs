@@ -7,7 +7,8 @@ namespace Assets.Scripts {
         private static readonly IDictionary<Section, float> SectionWeights = new Dictionary<Section, float> {
             {Section.Ground, 4f},
             {Section.SmallGap, 1f},
-            {Section.LargeGap, 2f}
+            {Section.LargeGap, 2f},
+            {Section.FloatingBlock, 7f}
         };
 
         private readonly SectionGenerator _sectionGenerator = new SectionGenerator(SectionWeights);
@@ -25,6 +26,15 @@ namespace Assets.Scripts {
         private GameObject _platformRightPrefab;
 
         [SerializeField]
+        private GameObject _floatingBlockLeftPrefab;
+
+        [SerializeField]
+        private GameObject _floatingBlockMidPrefab;
+
+        [SerializeField]
+        private GameObject _floatingBlockRightPrefab;
+
+        [SerializeField]
         private FishFactoryBehaviour _fishFactory;
 
         // TODO: This doesn't end up being the actual section count
@@ -35,11 +45,14 @@ namespace Assets.Scripts {
         private float _gapSize = 2.5f;
 
         private LevelGenerator _levelGenerator;
-
+        
         public void Awake() {
             _levelGenerator = new LevelGenerator(_platformLeftPrefab,
                                                  _platformMiddlePrefab,
                                                  _platformRightPrefab,
+                                                 _floatingBlockLeftPrefab,
+                                                 _floatingBlockMidPrefab,
+                                                 _floatingBlockRightPrefab,
                                                  _fishFactory,
                                                  _gapSize,
                                                  transform.position);

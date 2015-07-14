@@ -842,6 +842,12 @@ MonoBehaviour:
   _platformMiddlePrefab: {fileID: 100004, guid: d8366257ad11141529f2883f4b0643aa,
     type: 2}
   _platformRightPrefab: {fileID: 100004, guid: dcdbdd523c1424385beb90aa26e7822f, type: 2}
+  _floatingBlockLeftPrefab: {fileID: 164890, guid: 7448a5149f6cf1243a3defa8fe2362e6,
+    type: 2}
+  _floatingBlockMidPrefab: {fileID: 152416, guid: fdd15e786b30c464aacd1a859375198a,
+    type: 2}
+  _floatingBlockRightPrefab: {fileID: 133926, guid: bfa89e665d054f841a3a5ba60f9d3271,
+    type: 2}
   _fishFactory: {fileID: 327437907}
   _sectionCount: 100
   _gapSize: 2.5

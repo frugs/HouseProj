@@ -40,7 +40,7 @@ namespace Assets.Scripts {
                         var section = (Section) dictionaryEntry.Key;
                         sections.Add(section);
 
-                        if (section == Section.SmallGap || section == Section.LargeGap) {
+                        if (section.IsGap()) {
                             sections.Add(Section.Ground);
                         }
                         break;
