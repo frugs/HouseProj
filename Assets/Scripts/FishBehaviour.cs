@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts {
+﻿using Assets.Scripts.Score;
+
+namespace Assets.Scripts {
     public class FishBehaviour : PickUpBehaviour {
         public ScoreBehaviour ScoreBehaviour;
 

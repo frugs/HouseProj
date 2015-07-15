@@ -2,6 +2,7 @@
 using Assets.Scripts.Character;
 using Assets.Scripts.UI;
 using UnityEngine;
+using Assets.Scripts.Score;
 
 namespace Assets.Scripts {
     [RequireComponent(typeof (Collider2D))]

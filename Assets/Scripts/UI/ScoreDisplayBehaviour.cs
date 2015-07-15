@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Assets.Scripts.Score;
 
 namespace Assets.Scripts.UI {
     [RequireComponent(typeof(Text))]

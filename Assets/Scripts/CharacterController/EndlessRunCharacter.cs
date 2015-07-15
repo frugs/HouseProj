@@ -69,5 +69,9 @@ namespace Assets.Scripts.Character
 		    	m_Anim.SetTrigger ("Die");
             }
         }
+
+		public bool isDead() {
+			return _isDead;
+		}
 	}
 }

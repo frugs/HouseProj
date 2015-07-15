@@ -1,4 +1,5 @@
 using UnityEngine;
+using Assets.Scripts.Score;
 
 namespace Assets.Scripts {
     public class FishFactoryBehaviour : MonoBehaviour {
