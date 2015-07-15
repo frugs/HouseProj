@@ -8,13 +8,18 @@ namespace Assets.Scripts {
         Ground,
         FloatingBlock,
         SmallGap,
+        NormalGap,
         LargeGap
     }
 
     public static class SectionExtensions {
-           public static bool IsGap(this Section section) {
-               return section == Section.SmallGap || section == Section.LargeGap;
-           }
+        private static readonly HashSet<Section> GapSections = new HashSet<Section> {
+            Section.SmallGap, Section.NormalGap, Section.LargeGap
+        };
+        
+        public static bool IsGap(this Section section) {
+            return GapSections.Contains(section);
+        }
     }
 
     public class SectionGenerator {
@@ -47,7 +52,7 @@ namespace Assets.Scripts {
                     }
                 }
             }
-            sections.Add(Section.SmallGap);
+            sections.Add(Section.NormalGap);
 
             return sections;
         }

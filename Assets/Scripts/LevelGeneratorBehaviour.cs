@@ -6,7 +6,8 @@ namespace Assets.Scripts {
     public class LevelGeneratorBehaviour : MonoBehaviour {
         private static readonly IDictionary<Section, float> SectionWeights = new Dictionary<Section, float> {
             {Section.Ground, 4f},
-            {Section.SmallGap, 2f},
+            {Section.SmallGap, 0.25f},
+            {Section.NormalGap, 2f},
             {Section.LargeGap, 0.25f},
             {Section.FloatingBlock, 6f}
         };
