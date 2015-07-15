@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21266412}
   - 60: {fileID: 6086338}
   - 114: {fileID: 11423692}
+  - 114: {fileID: 11455058}
   m_Layer: 0
   m_Name: Barbed Wire
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.64999962, y: 1.82000005, z: 0}
+  m_LocalPosition: {x: 9.64999962, y: 1.20000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +41,7 @@ PolygonCollider2D:
   m_Material: {fileID: 6200000, guid: 0cb77231a430b454fb792ff7ffcc3943, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.82999992, y: 1.12}
   m_Points:
     m_Paths:
     - - {x: 1.51152229, y: 2.54037428}
@@ -63,6 +64,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreDisplayBehaviour: {fileID: 0}
   FullscreenScoreDisplayBehaviour: {fileID: 0}
+--- !u!114 &11455058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aa06e419aeb144f8be1f5688a11a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21266412
 SpriteRenderer:
   m_ObjectHideFlags: 1

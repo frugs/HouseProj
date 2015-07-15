@@ -10,7 +10,8 @@ namespace Assets.Scripts.LevelGeneration {
         SmallGap,
         NormalGap,
         LargeGap,
-        Obstacle
+        SmallObstacle,
+        LargeObstacle
     }
 
     public static class SectionExtensions {
@@ -20,6 +21,10 @@ namespace Assets.Scripts.LevelGeneration {
         
         public static bool IsGap(this Section section) {
             return GapSections.Contains(section);
+        }
+
+        public static bool IsObstacle(this Section section) {
+            return section == Section.SmallObstacle || section == Section.LargeObstacle;
         }
     }
 

@@ -16,9 +16,6 @@ namespace Assets.Scripts.LevelGeneration {
         private readonly SectionGenerator _sectionGenerator = new SectionGenerator(SectionWeights);
 
         [SerializeField]
-        private ScoreBehaviour _scoreBehaviour;
-        
-        [SerializeField]
         private GameObject _platformLeftPrefab;
 
         [SerializeField]

@@ -27,13 +27,14 @@ namespace Assets.Scripts.LevelGeneration {
             restartLevelBehaviour.ScoreDisplayBehaviour = _scoreDisplayBehaviour;
         }
 
-        public void CreateMiddle(Vector2 position) {
+        public GameObject CreateMiddle(Vector2 position) {
             var obj = (GameObject) Instantiate(_floatingBlockMiddlePrefab,
                                                       position,
                                                       Quaternion.identity);
             var restartLevelBehaviour = obj.GetComponent<RestartLevelBehaviour>();
             restartLevelBehaviour.FullscreenScoreDisplayBehaviour = _fullscreenScoreDisplayBehaviour;
             restartLevelBehaviour.ScoreDisplayBehaviour = _scoreDisplayBehaviour;
+            return obj;
         }
 
         public void CreateRight(Vector2 position) {
