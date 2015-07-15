@@ -2,7 +2,6 @@
 using Assets.Scripts.Character;
 using Assets.Scripts.UI;
 using UnityEngine;
-using Assets.Scripts.Score;
 
 namespace Assets.Scripts {
     [RequireComponent(typeof (Collider2D))]
@@ -18,6 +17,7 @@ namespace Assets.Scripts {
         }
 
         private IEnumerator RestartLevel() {
+            yield return new WaitForSeconds(0.5f);
             ScoreDisplayBehaviour.gameObject.SetActive(false);
             FullscreenScoreDisplayBehaviour.gameObject.SetActive(true);
             yield return new WaitForSeconds(1.5f);

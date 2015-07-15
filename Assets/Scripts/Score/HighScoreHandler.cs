@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -17,7 +16,6 @@ namespace Assets.Scripts.Score
 
 		public void Load ()
 		{
-			Debug.Log (Application.persistentDataPath + SCORE_FILE_NAME);
 			if (File.Exists (Application.persistentDataPath + SCORE_FILE_NAME)) {
 				FileStream file = File.Open (Application.persistentDataPath + SCORE_FILE_NAME, FileMode.Open);
 				scores = (List<Score>)formatter.Deserialize (file);
