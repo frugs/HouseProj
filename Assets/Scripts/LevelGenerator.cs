@@ -8,7 +8,7 @@ namespace Assets.Scripts {
         // TODO: This is pretty hacky and questionable
         private const float PlatformWidth = 2f;
         private const float LargeGapMultiplier = 1.5f;
-        private const float FishParabolaHeight = 2f;
+        private const float FishParabolaHeight = 3f;
         private const float CrouchHeight = 0.75f;
 
         private readonly GameObject _platformLeftPrefab;
@@ -41,7 +41,7 @@ namespace Assets.Scripts {
         }
 
         public void GenerateLevel(IEnumerable<Section> sections) {
-            var previousSection = Section.SmallGap;
+            var previousSection = Section.Ground;
             foreach (var section in sections) {
                 if (section.IsGap()) {
                     if (previousSection == Section.FloatingBlock) {
@@ -53,7 +53,7 @@ namespace Assets.Scripts {
                     _progress += PlatformWidth;
 
                     var gapSize = section == Section.SmallGap ? _gapSize : _gapSize * LargeGapMultiplier;
-                    CreateFishParabola(gapSize, FishParabolaHeight);
+                    CreateFishParabola(gapSize, FishParabolaHeight, FishCountForGap(section));
                     _progress += gapSize;
                 } else if (section == Section.Ground) {
                     if (previousSection.IsGap()) {
@@ -93,6 +93,17 @@ namespace Assets.Scripts {
                 }
 
                 previousSection = section;
+            }
+        }
+
+        private int FishCountForGap(Section section) {
+            switch (section) {
+                case Section.SmallGap:
+                    return 3;
+                case Section.LargeGap:
+                    return 5;
+                default:
+                    return 0;
             }
         }
 
@@ -139,19 +150,17 @@ namespace Assets.Scripts {
             _fishFactory.CreateFish(fish2Position);
         }
 
-        private void CreateFishParabola(float parabolaWidth, float parabolaHeight) {
+        private void CreateFishParabola(float parabolaWidth, float parabolaHeight, int fishCount) {
             var halfWidthSquared = (parabolaWidth / 2) * (parabolaWidth / 2);
             Func<float, float> parabola = x => x * (parabolaWidth - x) * (parabolaHeight / halfWidthSquared);
-            var origin = _origin.x + _progress;
+            var parabolaOriginX = _origin.x + _progress;
+            var parabolaOriginY = _origin.y;
 
-            var fish1Position = new Vector2(origin + (parabolaWidth / 7), parabola(parabolaWidth / 7));
-            _fishFactory.CreateFish(fish1Position);
-
-            var fish2Position = new Vector2(origin + (parabolaWidth / 2), parabola(parabolaWidth / 2));
-            _fishFactory.CreateFish(fish2Position);
-
-            var fish3Position = new Vector2(origin + (parabolaWidth * 6 / 7), parabola(parabolaWidth * 6 / 7));
-            _fishFactory.CreateFish(fish3Position);
+            for (var i = 1; i <= fishCount; i++) {
+                var fishXOffset = parabolaWidth * i / (fishCount + 1);
+                var fishPosition = new Vector2(parabolaOriginX + fishXOffset, parabolaOriginY + parabola(fishXOffset));
+                _fishFactory.CreateFish(fishPosition);
+            }
         }
     }
 }

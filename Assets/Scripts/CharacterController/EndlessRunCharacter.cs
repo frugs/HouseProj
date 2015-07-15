@@ -89,7 +89,7 @@ namespace Assets.Scripts.Character
 		        }
 
 		        // If the player should jump...
-		        if (m_Grounded && !crouch && jump && m_Anim.GetBool("Ground"))
+		        if (m_Grounded && jump && m_Anim.GetBool("Ground"))
                 {
 		            // Add a vertical force to the player.
 		            m_Grounded = false;
