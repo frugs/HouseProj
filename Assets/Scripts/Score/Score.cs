@@ -22,7 +22,9 @@ namespace Assets.Scripts.Score
 		{
 			Score score = (Score) obj;
 
-			return score.score.CompareTo (this.score);
+			int diff = score.score.CompareTo (this.score);
+			if (diff == 0) diff = score.time.CompareTo (this.time);
+			return diff;
 		}
 	}
 }
