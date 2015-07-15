@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-namespace Assets.Scripts {
-    public class LevelGenerator {
+namespace Assets.Scripts.LevelGeneration {
+    public class DefaultLevelGenerator : ILevelGenerator {
         // TODO: This is pretty hacky and questionable
         private const float PlatformWidth = 2f;
         private const float SmallGapMultiplier = 0.75f;
@@ -24,7 +22,7 @@ namespace Assets.Scripts {
 
         private float _progress;
 
-        public LevelGenerator(GameObject platformLeftPrefab,
+        public DefaultLevelGenerator(GameObject platformLeftPrefab,
                               GameObject platformMiddlePrefab,
                               GameObject platformRightPrefab,
                               FloatingBlockFactoryBehaviour floatingBlockFactory,
@@ -45,7 +43,7 @@ namespace Assets.Scripts {
                     if (previousSection == Section.FloatingBlock) {
                         CreateRightFloatingBlock();
                     } else {
-                        CreateFishOnPlatform();
+                        _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
                     }
                     CreateRightPlatform();
                     _progress += PlatformWidth;
@@ -53,20 +51,18 @@ namespace Assets.Scripts {
                     var gapSize = GetGapSize(section);
                     var parabolaSize = gapSize * 1.2f;
                     var parabolaOrigin = new Vector2(_origin.x + _progress - ((parabolaSize - gapSize) / 2), _origin.y);
-                    CreateFishParabola(parabolaOrigin,
-                                       parabolaSize,
-                                       FishParabolaHeight, FishCountForGap(section));
+                    _fishFactory.CreateFishParabola(parabolaOrigin, parabolaSize, FishParabolaHeight, FishCountForGap(section));
                     _progress += gapSize;
                 } else if (section == Section.Ground) {
                     if (previousSection.IsGap()) {
                         CreateLeftPlatform();
-                        CreateFishOnPlatform();
+                        _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
                         _progress += PlatformWidth;
                     } else {
                         if (previousSection == Section.FloatingBlock) {
                             CreateRightFloatingBlock();
                         } else {
-                            CreateFishOnPlatform();
+                            _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
                         }
                         CreateMiddlePlatform();
                         _progress += PlatformWidth;
@@ -155,27 +151,6 @@ namespace Assets.Scripts {
             Object.Instantiate(_platformLeftPrefab,
                                new Vector2(_origin.x + _progress, _origin.y),
                                Quaternion.identity);
-        }
-
-        private void CreateFishOnPlatform() {
-            var fish1Position = new Vector2(_origin.x + _progress + (PlatformWidth / 3),
-                                            _origin.y + 1f);
-            _fishFactory.CreateFish(fish1Position);
-
-            var fish2Position = new Vector2(_origin.x + _progress + (PlatformWidth * 2 / 3),
-                                            _origin.y + 1f);
-            _fishFactory.CreateFish(fish2Position);
-        }
-
-        private void CreateFishParabola(Vector2 origin, float parabolaWidth, float parabolaHeight, int fishCount) {
-            var halfWidthSquared = (parabolaWidth / 2) * (parabolaWidth / 2);
-            Func<float, float> parabola = x => x * (parabolaWidth - x) * (parabolaHeight / halfWidthSquared);
-
-            for (var i = 1; i <= fishCount; i++) {
-                var fishXOffset = parabolaWidth * i / (fishCount + 1);
-                var fishPosition = new Vector2(origin.x + fishXOffset, origin.y + parabola(fishXOffset));
-                _fishFactory.CreateFish(fishPosition);
-            }
         }
     }
 }

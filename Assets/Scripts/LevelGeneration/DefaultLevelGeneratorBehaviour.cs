@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+using System.Collections.Generic;
 using Assets.Scripts.Score;
+using UnityEngine;
 
-namespace Assets.Scripts {
+namespace Assets.Scripts.LevelGeneration {
     [RequireComponent(typeof (FishFactoryBehaviour), typeof (FloatingBlockFactoryBehaviour))]
-    public class LevelGeneratorBehaviour : MonoBehaviour {
+    public class DefaultLevelGeneratorBehaviour : MonoBehaviour {
         private static readonly IDictionary<Section, float> SectionWeights = new Dictionary<Section, float> {
             {Section.Ground, 3.5f},
             {Section.SmallGap, 0.25f},
@@ -17,7 +17,7 @@ namespace Assets.Scripts {
 
         [SerializeField]
         private ScoreBehaviour _scoreBehaviour;
-
+        
         [SerializeField]
         private GameObject _platformLeftPrefab;
 
@@ -27,23 +27,14 @@ namespace Assets.Scripts {
         [SerializeField]
         private GameObject _platformRightPrefab;
 
-        [SerializeField]
-        private GameObject _floatingBlockLeftPrefab;
-
-        [SerializeField]
-        private GameObject _floatingBlockMidPrefab;
-
-        [SerializeField]
-        private GameObject _floatingBlockRightPrefab;
-
         // TODO: This doesn't end up being the actual number of generated segments
         [SerializeField]
-        private readonly int _sectionCount = 100;
+        private int _sectionCount = 100;
 
-        private LevelGenerator _levelGenerator;
+        private ILevelGenerator _levelGenerator;
 
         public void Awake() {
-            _levelGenerator = new LevelGenerator(_platformLeftPrefab,
+            _levelGenerator = new DefaultLevelGenerator(_platformLeftPrefab,
                                                  _platformMiddlePrefab,
                                                  _platformRightPrefab,
                                                  GetComponent<FloatingBlockFactoryBehaviour>(),

@@ -845,7 +845,7 @@ GameObject:
   - 114: {fileID: 327437908}
   - 114: {fileID: 327437909}
   m_Layer: 0
-  m_Name: LevelGenerator
+  m_Name: DefaultLevelGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -871,11 +871,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 327437905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2289ab71803d06941854b24c4a9721b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bf5d8c6f9e15d5428390ccc8712795c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fishPrefab: {fileID: 191776, guid: 7627949a52eadf94db65aab71a7b086a, type: 2}
   _scoreBehaviour: {fileID: 1888032984}
+  _platformLeftPrefab: {fileID: 100004, guid: 93f8eef35873d40988621835aaa5a9ca, type: 2}
+  _platformMiddlePrefab: {fileID: 100004, guid: d8366257ad11141529f2883f4b0643aa,
+    type: 2}
+  _platformRightPrefab: {fileID: 100004, guid: dcdbdd523c1424385beb90aa26e7822f, type: 2}
+  _sectionCount: 100
 --- !u!114 &327437908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,20 +888,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 327437905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e6e699cf510d1448925c760937b4fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 55d224d6b4c6c3f46a0d27b9b423b3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fishPrefab: {fileID: 191776, guid: 7627949a52eadf94db65aab71a7b086a, type: 2}
   _scoreBehaviour: {fileID: 1888032984}
-  _platformLeftPrefab: {fileID: 100004, guid: 93f8eef35873d40988621835aaa5a9ca, type: 2}
-  _platformMiddlePrefab: {fileID: 100004, guid: d8366257ad11141529f2883f4b0643aa,
-    type: 2}
-  _platformRightPrefab: {fileID: 100004, guid: dcdbdd523c1424385beb90aa26e7822f, type: 2}
-  _floatingBlockLeftPrefab: {fileID: 164890, guid: 7448a5149f6cf1243a3defa8fe2362e6,
-    type: 2}
-  _floatingBlockMidPrefab: {fileID: 152416, guid: fdd15e786b30c464aacd1a859375198a,
-    type: 2}
-  _floatingBlockRightPrefab: {fileID: 133926, guid: bfa89e665d054f841a3a5ba60f9d3271,
-    type: 2}
 --- !u!114 &327437909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,7 +901,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 327437905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d6b91fdc595824fb395706a45f9ed5, type: 3}
+  m_Script: {fileID: 11500000, guid: 63009392efce13a428a1da809862b00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _floatingBlockLeftPrefab: {fileID: 164890, guid: 7448a5149f6cf1243a3defa8fe2362e6,
@@ -3826,11 +3821,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.1476688
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.01600003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3859,10 +3854,6 @@ Prefab:
     - target: {fileID: 124486, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_Name
       value: Ground (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 21265652, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 27032387
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
@@ -4196,11 +4187,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.377882
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.019382
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4225,10 +4216,6 @@ Prefab:
     - target: {fileID: 453038, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 21265652, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 27032387
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54ebea277ef791649b0ce1aaa82abaf4, type: 2}

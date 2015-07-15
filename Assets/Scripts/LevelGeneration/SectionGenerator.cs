@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
 
-namespace Assets.Scripts {
+namespace Assets.Scripts.LevelGeneration {
     public enum Section {
         Ground,
         FloatingBlock,
         SmallGap,
         NormalGap,
-        LargeGap
+        LargeGap,
+        Obstacle
     }
 
     public static class SectionExtensions {
