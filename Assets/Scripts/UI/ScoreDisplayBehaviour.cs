@@ -16,7 +16,7 @@ namespace Assets.Scripts.UI {
         }
 
         public void LateUpdate() {
-			_text.text = "Fish: " + _score.Score.ToString() + "\nTime: " + String.Format("{0:F}", Time.timeSinceLevelLoad);
+			_text.text = "Fish: " + _score.Score.ToString() + "\nTime: " + String.Format("{0:F}", _score.SurvivedTime);
         }
     }
 }

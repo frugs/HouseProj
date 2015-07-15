@@ -14,7 +14,7 @@ namespace Assets.Scripts.Score {
         public int Score { get; set; }
 		public float SurvivedTime { get; set; }
 
-		public void OnStart() {
+		public void Start() {
 			highScoreHandler.Load ();
 			wasDead = false;
 		}
