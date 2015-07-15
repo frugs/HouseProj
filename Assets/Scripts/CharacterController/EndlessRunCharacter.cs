@@ -112,8 +112,11 @@ namespace Assets.Scripts.Character
 
 		public void Kill () 
         {
-		    _isDead = true;
-			m_Anim.SetTrigger ("Die");
-		}
+		    if (!_isDead) 
+            {
+		        _isDead = true;
+		    	m_Anim.SetTrigger ("Die");
+            }
+        }
 	}
 }
