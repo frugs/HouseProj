@@ -9,8 +9,6 @@ namespace Assets.Scripts.Character
 		private EndlessRunCharacter m_Character;
 		private bool m_Jump;
 
-		[SerializeField] private float m_RunForce = 1.0f;		
-		
 		private void Awake()
 		{
 			m_Character = GetComponent<EndlessRunCharacter>();
@@ -31,7 +29,7 @@ namespace Assets.Scripts.Character
 		{
 			// Read the inputs.
 		    bool crouch = Input.GetButton("Crouch") || TouchInputBehaviour.GetCrouch();
-			m_Character.ApplyControl(m_RunForce, crouch, m_Jump);
+			m_Character.ApplyControl(crouch, m_Jump);
 			m_Jump = false;
 		}
 	}

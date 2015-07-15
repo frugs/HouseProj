@@ -7,8 +7,9 @@ namespace Assets.Scripts {
     public class LevelGenerator {
         // TODO: This is pretty hacky and questionable
         private const float PlatformWidth = 2f;
-        private const float LargeGapMultiplier = 1.5f;
-        private const float FishParabolaHeight = 3f;
+        private const float SmallGapSize = 4.3f;
+        private const float LargeGapMultiplier = 1.33f;
+        private const float FishParabolaHeight = 3.3f;
         private const float CrouchHeight = 0.75f;
 
         private readonly GameObject _platformLeftPrefab;
@@ -17,8 +18,6 @@ namespace Assets.Scripts {
 
         private readonly FloatingBlockFactoryBehaviour _floatingBlockFactory;
         private readonly FishFactoryBehaviour _fishFactory;
-
-        private readonly float _gapSize;
 
         private readonly Vector2 _origin;
 
@@ -29,14 +28,12 @@ namespace Assets.Scripts {
                               GameObject platformRightPrefab,
                               FloatingBlockFactoryBehaviour floatingBlockFactory,
                               FishFactoryBehaviour fishFactory,
-                              float gapSize,
                               Vector2 origin) {
             _platformLeftPrefab = platformLeftPrefab;
             _platformMiddlePrefab = platformMiddlePrefab;
             _platformRightPrefab = platformRightPrefab;
             _floatingBlockFactory = floatingBlockFactory;
             _fishFactory = fishFactory;
-            _gapSize = gapSize;
             _origin = origin;
         }
 
@@ -52,8 +49,8 @@ namespace Assets.Scripts {
                     CreateRightPlatform();
                     _progress += PlatformWidth;
 
-                    var gapSize = section == Section.SmallGap ? _gapSize : _gapSize * LargeGapMultiplier;
-                    CreateFishParabola(gapSize, FishParabolaHeight, FishCountForGap(section));
+                    var gapSize = section == Section.SmallGap ? SmallGapSize : SmallGapSize * LargeGapMultiplier;
+                    CreateFishParabola(gapSize * 1.2f, FishParabolaHeight, FishCountForGap(section));
                     _progress += gapSize;
                 } else if (section == Section.Ground) {
                     if (previousSection.IsGap()) {

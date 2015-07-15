@@ -38,9 +38,6 @@ namespace Assets.Scripts {
         [SerializeField]
         private readonly int _sectionCount = 100;
 
-        [SerializeField]
-        private readonly float _gapSize = 4f;
-
         private LevelGenerator _levelGenerator;
 
         public void Awake() {
@@ -49,7 +46,6 @@ namespace Assets.Scripts {
                                                  _platformRightPrefab,
                                                  GetComponent<FloatingBlockFactoryBehaviour>(),
                                                  GetComponent<FishFactoryBehaviour>(),
-                                                 _gapSize,
                                                  transform.position);
         }
 

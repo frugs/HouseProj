@@ -5,7 +5,8 @@ namespace Assets.Scripts.Character
     [RequireComponent(typeof (Rigidbody2D), typeof (Animator))]
 	public class EndlessRunCharacter : MonoBehaviour
 	{
-		[SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
+        [SerializeField] private float m_RunForce = 200f;
+		[SerializeField] private float m_MaxSpeed = 2.6f;                    // The fastest the player can travel in the x axis.
 		[SerializeField] private float m_JumpVelocity = 13.1f;                  // Amount of force added when the player jumps.
 		[SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 		
@@ -39,26 +40,32 @@ namespace Assets.Scripts.Character
 			m_Anim.SetBool("Ground", m_Grounded);
 		}
 		
-		public void ApplyControl(float move, bool crouch, bool jump)
+		public void ApplyControl(bool crouch, bool jump)
 		{
-		    //only control the player if grounded or and not dead
-		    if (m_Grounded && !_isDead) 
-            {
-                // Set whether or not the character is crouching in the animator
-                m_Anim.SetBool("Crouch", crouch);
+		    //only control the player if not dead
+            if (!_isDead)
+            { 
+                // Move the character
+                m_Rigidbody2D.AddForce(new Vector2(m_RunForce, 0f));
 
-		        // Move the character
-		        m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
-
-                // If the player should jump...
-                if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+                // Clamp to max horizontal speed
+                m_Rigidbody2D.velocity = new Vector2(Mathf.Clamp(m_Rigidbody2D.velocity.x, 0f, m_MaxSpeed), m_Rigidbody2D.velocity.y);
+            
+                if (m_Grounded) 
                 {
-                    // Add a vertical force to the player.
-                    m_Grounded = false;
-                    m_Anim.SetBool("Ground", false);
-                    m_Rigidbody2D.velocity = m_Rigidbody2D.velocity + new Vector2(0f, m_JumpVelocity);
-                }
-		    }
+                    // Set whether or not the character is crouching in the animator
+                    m_Anim.SetBool("Crouch", crouch);
+
+                    // If the player should jump...
+                    if (m_Grounded && jump && m_Anim.GetBool("Ground"))
+                    {
+                        // Add a vertical force to the player.
+                        m_Grounded = false;
+                        m_Anim.SetBool("Ground", false);
+                        m_Rigidbody2D.velocity = m_Rigidbody2D.velocity + new Vector2(0f, m_JumpVelocity);
+                    }
+		        }
+            }
 		}
 		
 		public void Kill () 

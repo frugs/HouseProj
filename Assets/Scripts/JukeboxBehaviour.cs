@@ -13,6 +13,8 @@ namespace Assets.Scripts {
             if (!_musicStarted) {
                 GetComponent<AudioSource>().Play();
                 _musicStarted = true;
+            } else {
+                Destroy(gameObject);
             }
         }
     }
