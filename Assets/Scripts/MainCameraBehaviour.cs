@@ -6,11 +6,11 @@ namespace Assets.Scripts {
         private Transform _followTransform;
 
         [SerializeField]
-        private readonly float _lookAheadFactor = 0.25f;
+        private float _lookAheadFactor = 0.5f;
 
         public void Update() {
-            float lookAhead = Camera.main.orthographicSize * Camera.main.aspect * 0.25f;
-            transform.position = lookAhead > 0.25f
+            float lookAhead = Camera.main.orthographicSize * Camera.main.aspect * _lookAheadFactor;
+            transform.position = lookAhead > 1.3f
                     ? new Vector3(_followTransform.position.x + lookAhead,
                                   _followTransform.position.y,
                                   transform.position.z)
