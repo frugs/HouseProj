@@ -22,7 +22,6 @@ namespace Assets.Scripts.Score {
 		public void Update() {
 			this.SurvivedTime = Time.timeSinceLevelLoad;
 			if (player.isDead () && !wasDead) {
-				submitScore();
 				wasDead = true;
 			}
 		}
@@ -32,8 +31,13 @@ namespace Assets.Scripts.Score {
 			return highScoreHandler.getScores ();
 		}
 
-		public void submitScore() {
-			highScoreHandler.submitScore ("aName" + Random.value, Score, SurvivedTime);
+		public void submitScore(string name) {
+			highScoreHandler.submitScore (name, Score, SurvivedTime);
+		}
+
+		public bool HasNewHighScore() {
+			List<Score> currentScores = getHighScores ();
+			return currentScores.Count < 5 || currentScores [4].score < Score;
 		}
     }
 }

@@ -20,7 +20,10 @@ namespace Assets.Scripts {
             yield return new WaitForSeconds(0.5f);
             ScoreDisplayBehaviour.gameObject.SetActive(false);
             FullscreenScoreDisplayBehaviour.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1.5f);
+            while (!FullscreenScoreDisplayBehaviour.IsDone ()) {
+				yield return null;
+			}
+			yield return new WaitForSeconds (4);
             Application.LoadLevel(Application.loadedLevelName);
         }
     }
