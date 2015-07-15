@@ -6,10 +6,11 @@ namespace Assets.Scripts {
     [RequireComponent(typeof (FishFactoryBehaviour), typeof (FloatingBlockFactoryBehaviour))]
     public class LevelGeneratorBehaviour : MonoBehaviour {
         private static readonly IDictionary<Section, float> SectionWeights = new Dictionary<Section, float> {
-            {Section.Ground, 4f},
-            {Section.SmallGap, 2f},
+            {Section.Ground, 3.5f},
+            {Section.SmallGap, 0.25f},
+            {Section.NormalGap, 2f},
             {Section.LargeGap, 0.25f},
-            {Section.FloatingBlock, 6f}
+            {Section.FloatingBlock, 8f}
         };
 
         private readonly SectionGenerator _sectionGenerator = new SectionGenerator(SectionWeights);
@@ -39,9 +40,6 @@ namespace Assets.Scripts {
         [SerializeField]
         private readonly int _sectionCount = 100;
 
-        [SerializeField]
-        private readonly float _gapSize = 4f;
-
         private LevelGenerator _levelGenerator;
 
         public void Awake() {
@@ -50,12 +48,27 @@ namespace Assets.Scripts {
                                                  _platformRightPrefab,
                                                  GetComponent<FloatingBlockFactoryBehaviour>(),
                                                  GetComponent<FishFactoryBehaviour>(),
-                                                 _gapSize,
                                                  transform.position);
         }
 
         public void Start() {
-            var sections = _sectionGenerator.GenerateSections(_sectionCount);
+            var sections = new List<Section>() {
+                Section.Ground,
+                Section.Ground,
+                Section.Ground,
+                Section.Ground,
+                Section.NormalGap,
+                Section.Ground,
+                Section.Ground,
+                Section.FloatingBlock,
+                Section.FloatingBlock,
+                Section.FloatingBlock,
+                Section.Ground,
+                Section.SmallGap,
+                Section.Ground
+            };
+
+            sections.AddRange(_sectionGenerator.GenerateSections(_sectionCount));
             _levelGenerator.GenerateLevel(sections);
         }
     }
