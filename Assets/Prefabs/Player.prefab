@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 7
-  m_JumpVelocity: 12
+  m_JumpVelocity: 13.1000004
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 256

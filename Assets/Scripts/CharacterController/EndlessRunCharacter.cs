@@ -6,7 +6,7 @@ namespace Assets.Scripts.Character
 	public class EndlessRunCharacter : MonoBehaviour
 	{
 		[SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
-		[SerializeField] private float m_JumpVelocity = 12;                  // Amount of force added when the player jumps.
+		[SerializeField] private float m_JumpVelocity = 13.1f;                  // Amount of force added when the player jumps.
 		[SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 		
 		private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
