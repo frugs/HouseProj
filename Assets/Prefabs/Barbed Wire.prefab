@@ -37,20 +37,19 @@ PolygonCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112658}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0cb77231a430b454fb792ff7ffcc3943, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
     m_Paths:
-    - - {x: -1.45528698, y: 1.16475499}
-      - {x: 1.51152229, y: 2.54037428}
+    - - {x: 1.51152229, y: 2.54037428}
       - {x: 2.07189846, y: 3.69579363}
       - {x: 2.68039703, y: 4.53907633}
       - {x: 2.93536091, y: 5.56474161}
-      - {x: 2.58996582, y: -.608798623}
-      - {x: -3.01900625, y: -.608798862}
-      - {x: -2.91033411, y: -.0771175623}
+      - {x: 2.74836826, y: -1.03526616}
+      - {x: -2.23917961, y: -.840309739}
+      - {x: -2.44731236, y: .28842628}
 --- !u!114 &11423692
 MonoBehaviour:
   m_ObjectHideFlags: 1
