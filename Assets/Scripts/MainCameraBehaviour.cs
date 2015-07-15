@@ -12,7 +12,7 @@ namespace Assets.Scripts {
             float lookAhead = Camera.main.orthographicSize * Camera.main.aspect * _lookAheadFactor;
             transform.position = lookAhead > 1.3f
                     ? new Vector3(_followTransform.position.x + lookAhead,
-                                  _followTransform.position.y,
+                                  transform.position.y,
                                   transform.position.z)
                     : new Vector3(_followTransform.position.x, _followTransform.position.y, transform.position.z);
         }
