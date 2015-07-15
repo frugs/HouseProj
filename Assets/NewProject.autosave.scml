@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r4.1">
-    <folder id="0">
-        <file id="0" name="Fish1-1.png" width="769" height="591" pivot_x="0" pivot_y="1"/>
+    <folder id="0" name="Sprites">
+        <file id="0" name="Sprites/Fish1-1.png" width="769" height="591" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="entity_000">
         <animation id="0" name="NewAnimation" length="1000" interval="100">
             <mainline>
-                <key id="0" curve_type="bezier" c1="0.3432" c2="0.547739" c3="0.528596" c4="0.794">
+                <key id="0">
                     <object_ref id="0" timeline="0" key="0" z_index="0"/>
                 </key>
-                <key id="1" time="501" curve_type="bezier" c1="0.3778" c2="0.81407" c3="0.5633" c4="0.954774">
+                <key id="1" time="500">
                     <object_ref id="0" timeline="0" key="1" z_index="0"/>
                 </key>
             </mainline>
             <timeline id="0" name="Fish1-1">
                 <key id="0">
-                    <object folder="0" file="0" x="-108.253078" y="82.790893" scale_x="0.281643" scale_y="0.281407"/>
+                    <object folder="0" file="0" x="-116.348377" y="89.160714" scale_x="0.303247" scale_y="0.303006"/>
                 </key>
-                <key id="1" time="501">
-                    <object folder="0" file="0" x="108.126233" y="82.790893" angle="0" scale_x="-0.28164" scale_y="0.28141"/>
+                <key id="1" time="500">
+                    <object folder="0" file="0" x="116.687338" y="89.160714" angle="0" scale_x="-0.30325" scale_y="0.30301"/>
                 </key>
             </timeline>
         </animation>
