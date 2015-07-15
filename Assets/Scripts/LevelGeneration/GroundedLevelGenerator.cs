@@ -11,5 +11,7 @@ namespace Assets.Scripts.LevelGeneration {
         }
     }
 
-    public class ObstacleFactoryBehaviour : MonoBehaviour {}
+    public class ObstacleFactoryBehaviour : MonoBehaviour {
+        
+    }
 }
