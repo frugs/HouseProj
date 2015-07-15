@@ -1,7 +1,7 @@
 using Assets.Scripts.UI;
 using UnityEngine;
 
-namespace Assets.Scripts {
+namespace Assets.Scripts.LevelGeneration {
     public class FloatingBlockFactoryBehaviour : MonoBehaviour {
         [SerializeField]
         private GameObject _floatingBlockLeftPrefab;
