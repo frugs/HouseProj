@@ -37,10 +37,10 @@ namespace Assets.Scripts.LevelGeneration {
         }
 
         public void GenerateLevel(IEnumerable<Section> sections) {
-            var previousSection = Section.Ground;
+            var previousSection = Section.PlatformMid;
             foreach (var section in sections) {
                 if (section.IsGap()) {
-                    if (previousSection == Section.FloatingBlock) {
+                    if (previousSection == Section.FloatingBlockMid) {
                         CreateRightFloatingBlock();
                     } else {
                         _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
@@ -53,13 +53,13 @@ namespace Assets.Scripts.LevelGeneration {
                     var parabolaOrigin = new Vector2(_origin.x + _progress - ((parabolaSize - gapSize) / 2), _origin.y);
                     _fishFactory.CreateFishParabola(parabolaOrigin, parabolaSize, FishParabolaHeight, FishCountForGap(section));
                     _progress += gapSize;
-                } else if (section == Section.Ground) {
+                } else if (section == Section.PlatformMid) {
                     if (previousSection.IsGap()) {
                         CreateLeftPlatform();
                         _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
                         _progress += PlatformWidth;
                     } else {
-                        if (previousSection == Section.FloatingBlock) {
+                        if (previousSection == Section.FloatingBlockMid) {
                             CreateRightFloatingBlock();
                         } else {
                             _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
@@ -67,7 +67,7 @@ namespace Assets.Scripts.LevelGeneration {
                         CreateMiddlePlatform();
                         _progress += PlatformWidth;
                     }
-                } else if (section == Section.FloatingBlock) {
+                } else if (section == Section.FloatingBlockMid) {
                     if (previousSection.IsGap()) {
                         CreateLeftPlatform();
                         _progress += PlatformWidth;
@@ -77,7 +77,7 @@ namespace Assets.Scripts.LevelGeneration {
                         CreateMiddlePlatform();
                         _progress += PlatformWidth;
                     } else {
-                        if (previousSection == Section.FloatingBlock) {
+                        if (previousSection == Section.FloatingBlockMid) {
                             CreateMiddleFloatingBlock();
                         } else {
                             CreateMiddlePlatform();

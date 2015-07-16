@@ -33,31 +33,21 @@ namespace Assets.Scripts.LevelGeneration {
             }
 
             var progress = 0f;
-            var previousSection = Section.LargeGap;
             foreach (var section in sections) {
                 if (section.IsGap()) {
-                    progress += GetGapSize(previousSection.IsObstacle() ? Section.LargeGap : section);
+                    progress += GetGapSize(section);
                 } else if (section.IsObstacle()) {
-                    if (previousSection == Section.FloatingBlock) {
-                        progress += GetGapSize(Section.NormalGap);
-                    }
-
                     var position = _origin + new Vector2(progress, 0f);
                     var obstacle = section == Section.SmallObstacle
                             ? _obstacleFactory.CreateSmallObstacle(position)
                             : _obstacleFactory.CreateLargeObstacle(position);
 
                     progress += obstacle.GetComponent<GameObjectDimensionsBehaviour>().Size.x;
-                } else if (section == Section.FloatingBlock) {
-                    if (previousSection.IsObstacle()) {
-                        progress += GetGapSize(Section.NormalGap);
-                    }
-
+                } else if (section == Section.FloatingBlockMid) {
                     var position = _origin + new Vector2(progress, 0.5f);
                     var block = _floatingBlockFactory.CreateMiddle(position);
                     progress += block.GetComponent<GameObjectDimensionsBehaviour>().Size.x;
                 }
-                previousSection = section;
             }
         }
 

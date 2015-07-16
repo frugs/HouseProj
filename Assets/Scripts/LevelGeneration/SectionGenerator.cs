@@ -5,8 +5,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.LevelGeneration {
     public enum Section {
-        Ground,
-        FloatingBlock,
+        PlatformLeft,
+        PlatformMid,
+        PlatformRight,
+        FloatingBlockLeft,
+        FloatingBlockMid,
+        FloatingBlockRight,
         SmallGap,
         NormalGap,
         LargeGap,
@@ -19,12 +23,28 @@ namespace Assets.Scripts.LevelGeneration {
             Section.SmallGap, Section.NormalGap, Section.LargeGap
         };
         
+        private static readonly HashSet<Section> FloatingBlockSections = new HashSet<Section> {
+            Section.FloatingBlockLeft, Section.FloatingBlockMid, Section.FloatingBlockRight
+        };
+        
+        private static readonly HashSet<Section> PlatformSections = new HashSet<Section> {
+            Section.PlatformLeft, Section.PlatformMid, Section.PlatformRight
+        };
+        
         public static bool IsGap(this Section section) {
             return GapSections.Contains(section);
         }
 
         public static bool IsObstacle(this Section section) {
             return section == Section.SmallObstacle || section == Section.LargeObstacle;
+        }
+
+        public static bool IsFloatingBlock(this Section section) {
+            return FloatingBlockSections.Contains(section);
+        }
+
+        public static bool IsPlatform(this Section section) {
+            return PlatformSections.Contains(section);
         }
     }
 
@@ -43,17 +63,13 @@ namespace Assets.Scripts.LevelGeneration {
                 cumulativeSectionWeights.Add(pair.Key, cumulativeWeight);
             }
 
-            var sections = new List<Section> {Section.Ground};
+            var sections = new List<Section> {Section.PlatformMid};
             for (var i = 0; i < sectionCount; i++) {
                 foreach (var entry in cumulativeSectionWeights) {
                     var dictionaryEntry = (DictionaryEntry) entry;
                     if (Random.Range(0f, cumulativeWeight) <= (float) dictionaryEntry.Value) {
                         var section = (Section) dictionaryEntry.Key;
                         sections.Add(section);
-
-                        if (section.IsGap()) {
-                            sections.Add(Section.Ground);
-                        }
                         break;
                     }
                 }

@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 212: {fileID: 21271706}
+  - 114: {fileID: 11436830}
   m_Layer: 8
   m_Name: PlatformLeft
   m_TagString: Untagged
@@ -112,6 +113,17 @@ BoxCollider2D:
   m_Offset: {x: 1.04999995, y: -.25}
   serializedVersion: 2
   m_Size: {x: 1.89999998, y: .5}
+--- !u!114 &11436830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aa06e419aeb144f8be1f5688a11a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21271706
 SpriteRenderer:
   m_ObjectHideFlags: 1

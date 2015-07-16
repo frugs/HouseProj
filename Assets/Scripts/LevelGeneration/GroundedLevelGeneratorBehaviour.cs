@@ -7,13 +7,19 @@ namespace Assets.Scripts.LevelGeneration {
         [SerializeField]
         private GameObject _groundPrefab;
 
-        private GroundedLevelGenerator _levelGenerator;
+        private ILevelGenerator _levelGenerator;
 
         public void Awake() {
-            _levelGenerator = new GroundedLevelGenerator(transform.position,
-                                                         _groundPrefab,
-                                                         GetComponent<ObstacleFactoryBehaviour>(),
-                                                         GetComponent<FloatingBlockFactoryBehaviour>());
+//            _levelGenerator = new LevelGenerator(transform.position,
+//                                                 GetComponent<ObstacleFactoryBehaviour>(),
+//                                                 GetComponent<FloatingBlockFactoryBehaviour>(),
+//                                                 null,
+//                                                 _groundPrefab,
+//                                                 null,
+//                                                 2f,
+//                                                 4f,
+//                                                 7f,
+//                                                 true);
         }
 
         public void Start() {
@@ -23,16 +29,10 @@ namespace Assets.Scripts.LevelGeneration {
                 {Section.SmallGap, 2f},
                 {Section.NormalGap, 3f},
                 {Section.LargeGap, 1f},
-                {Section.FloatingBlock, 10f}
+                {Section.FloatingBlockMid, 10f}
             });
 
-            var sections = new List<Section> {
-                Section.LargeGap,
-                Section.LargeGap,
-                Section.LargeGap,
-                Section.LargeGap
-            };
-            sections.AddRange(sectionGenerator.GenerateSections(90));
+            var sections = new AlleyLevelSectionSanitizer().SanitiseSections(sectionGenerator.GenerateSections(150));
             _levelGenerator.GenerateLevel(sections);
         }
     }
