@@ -24,7 +24,7 @@ namespace Assets.Scripts {
             var sectionGenerator = new SectionGenerator(levelInfo.SectionWeights);
             var sections = levelInfo.SectionSanitiser.SanitiseSections(sectionGenerator.GenerateSections(120));
             var levelSchematics = levelGenerator.GenerateLevel(sections);
-            levelInfo.FishPlacer.LayFish(Vector2.zero, levelInfo.FishFactory, levelSchematics);
+            levelInfo.FishPlacer.PlaceFish(Vector2.zero, levelInfo.FishFactory, levelSchematics);
         }
     }
 }

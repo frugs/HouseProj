@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.LevelGeneration {
     public class IndoorFishPlacer : IFishPlacer {
-        public void LayFish(Vector2 origin, FishFactoryBehaviour fishFactory, IList<KeyValuePair<Section, Vector2>> levelSchematics) {
+        public void PlaceFish(Vector2 origin, FishFactoryBehaviour fishFactory, IList<KeyValuePair<Section, Vector2>> levelSchematics) {
             float progress = 0f;
             foreach (var section in levelSchematics) {
                 if (section.Key.IsPlatform()) {
