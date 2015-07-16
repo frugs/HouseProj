@@ -43,7 +43,7 @@ namespace Assets.Scripts.LevelGeneration {
                     if (previousSection == Section.FloatingBlockMid) {
                         CreateRightFloatingBlock();
                     } else {
-                        _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
+                        _fishFactory.CreateFishStretch(_origin + new Vector2(_progress, 0f), PlatformWidth);
                     }
                     CreateRightPlatform();
                     _progress += PlatformWidth;
@@ -56,13 +56,13 @@ namespace Assets.Scripts.LevelGeneration {
                 } else if (section == Section.PlatformMid) {
                     if (previousSection.IsGap()) {
                         CreateLeftPlatform();
-                        _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
+                        _fishFactory.CreateFishStretch(_origin + new Vector2(_progress, 0f), PlatformWidth);
                         _progress += PlatformWidth;
                     } else {
                         if (previousSection == Section.FloatingBlockMid) {
                             CreateRightFloatingBlock();
                         } else {
-                            _fishFactory.CreateFishLine(_origin + new Vector2(_progress, 0f), PlatformWidth, 2);
+                            _fishFactory.CreateFishStretch(_origin + new Vector2(_progress, 0f), PlatformWidth);
                         }
                         CreateMiddlePlatform();
                         _progress += PlatformWidth;

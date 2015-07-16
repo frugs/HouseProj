@@ -42,11 +42,11 @@ namespace Assets.Scripts {
         }
 
         public ISectionSanitiser SectionSanitiser {
-            get { return new AlleyLevelSectionSanitizer(); }
+            get { return new AlleyLevelSectionSanitiser(); }
         }
 
         public IFishPlacer FishPlacer {
-            get { return new IndoorFishPlacer(); }
+            get { return new AlleyFishPlacer(); }
         }
 
         public FishFactoryBehaviour FishFactory {
@@ -74,7 +74,7 @@ namespace Assets.Scripts {
         }
 
         public float SmallGapSize {
-            get { return 2f; }
+            get { return 3f; }
         }
 
         public float NormalGapSize {

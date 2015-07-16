@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 
 namespace Assets.Scripts.LevelGeneration {
-    public class AlleyLevelSectionSanitizer : ISectionSanitiser {
+    public class AlleyLevelSectionSanitiser : ISectionSanitiser {
         public IList<Section> SanitiseSections(IEnumerable<Section> sections) {
             var sanitised = new List<Section> {
                 Section.LargeGap,
                 Section.LargeGap,
                 Section.LargeGap,
-                Section.LargeGap
+                Section.LargeGap,
+                Section.LargeObstacle,
+                Section.LargeObstacle,
+                Section.NormalGap 
             };
 
             var previousSection = Section.LargeGap;

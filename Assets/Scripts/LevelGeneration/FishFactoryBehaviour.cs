@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.LevelGeneration {
     public class FishFactoryBehaviour : MonoBehaviour {
+        private const float FishYOffset = 1f;
+        private const float FishSpacing = 1.5f;
+
         [SerializeField]
         private GameObject _fishPrefab;
 
@@ -31,10 +34,11 @@ namespace Assets.Scripts.LevelGeneration {
             }
         }
 
-        public void CreateFishLine(Vector2 origin, float platformWidth, int fishCount) {
+        public void CreateFishStretch(Vector2 origin, float stretchWidth) {
+            var fishCount = Mathf.FloorToInt(stretchWidth / FishSpacing);
             for (var i = 1; i <= fishCount; i++) {
-                var fishXOffset = platformWidth * i / (fishCount + 1);
-                var fishPosition = new Vector2(origin.x + fishXOffset, origin.y);
+                var fishXOffset = stretchWidth * i / (fishCount + 1);
+                var fishPosition = new Vector2(origin.x + fishXOffset, origin.y + FishYOffset);
                 CreateFish(fishPosition);
             }
         }
