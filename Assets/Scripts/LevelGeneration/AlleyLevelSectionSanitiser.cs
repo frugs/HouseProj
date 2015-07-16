@@ -8,9 +8,6 @@ namespace Assets.Scripts.LevelGeneration {
                 Section.LargeGap,
                 Section.LargeGap,
                 Section.LargeGap,
-                Section.LargeObstacle,
-                Section.LargeObstacle,
-                Section.NormalGap 
             };
 
             var previousSection = Section.LargeGap;
