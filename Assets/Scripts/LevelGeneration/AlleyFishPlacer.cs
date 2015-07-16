@@ -14,13 +14,33 @@ namespace Assets.Scripts.LevelGeneration {
             PlaceFishOnGapSequences(origin, fishFactory, levelSchematics);
 
             var progress = Vector2.zero;
-            for (var i = 3; i < levelSchematics.Count; i++) {
-                var seg1 = levelSchematics[i - 3];
-                var seg2 = levelSchematics[i - 2];
-                var seg3 = levelSchematics[i - 1];
-                var seg4 = levelSchematics[i];
+            for (var i = 4; i < levelSchematics.Count; i++) {
+                var seg1 = levelSchematics[i - 4];
+                var seg2 = levelSchematics[i - 3];
+                var seg3 = levelSchematics[i - 2];
+                var seg4 = levelSchematics[i - 1];
+                var seg5 = levelSchematics[i];
 
-                if (seg1.Key.IsGap() && seg2.Key.IsObstacle() && seg3.Key.IsGap()) {
+                if (seg1.Key.IsGap() && seg2.Key.IsObstacle() && seg3.Key.IsGap() && seg4.Key.IsObstacle() && seg5.Key.IsGap()) {
+                    // If there is a gap, obstacle, gap, obstacle, gap, place parabolas over the obstacles and join them up in between                
+                    var parabola1Width = seg2.Key == Section.SmallObstacle ? SmallObstacleParabolaWidth : LargeObstacleParabolaWidth;
+
+                    var precedingStretchWidth = seg1.Value.x - ((parabola1Width - seg2.Value.x) / 2);
+                    var parabola1Origin = origin + progress + new Vector2(precedingStretchWidth, 0f);
+                    fishFactory.CreateFishParabola(parabola1Origin, parabola1Width, 4f, 5);
+
+                    var parabola2Width = seg4.Key == Section.SmallObstacle ? SmallObstacleParabolaWidth : LargeObstacleParabolaWidth;
+                    var inbetweenStretchWidth = seg3.Value.x - ((parabola1Width - seg2.Value.x) / 2) - ((parabola2Width - seg4.Value.x) / 2);
+
+                    fishFactory.CreateFishStretch(origin + progress + new Vector2(precedingStretchWidth + parabola1Width, 0f), inbetweenStretchWidth);
+
+                    var parabola2Origin = origin + progress + new Vector2(precedingStretchWidth + parabola1Width + inbetweenStretchWidth, 0f);
+                    fishFactory.CreateFishParabola(parabola2Origin, parabola2Width, 4f, 5);
+
+                    // This hack stops the rule under this one from overlapping
+                    i = i + 3;
+                    progress += new Vector2(seg2.Value.x + seg3.Value.x + seg4.Value.x, 0f);
+                } else if (seg1.Key.IsGap() && seg2.Key.IsObstacle() && seg3.Key.IsGap()) {
                     // Place a nice parabola over a single obstacle surrounded by gaps, and surround the parabola with stretches of fish                
                     var parabolaWidth = seg2.Key == Section.SmallObstacle ? SmallObstacleParabolaWidth : LargeObstacleParabolaWidth;
                     var precedingStretchWidth = seg1.Value.x - ((parabolaWidth - seg2.Value.x) / 2);

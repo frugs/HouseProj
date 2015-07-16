@@ -7,7 +7,7 @@ namespace Assets.Scripts.LevelGeneration {
                 Section.LargeGap,
                 Section.LargeGap,
                 Section.LargeGap,
-                Section.LargeGap,
+                Section.LargeGap
             };
 
             var previousSection = Section.LargeGap;
