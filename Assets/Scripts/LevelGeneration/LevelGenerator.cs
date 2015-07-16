@@ -4,7 +4,7 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace Assets.Scripts.LevelGeneration {
-    public class LevelGenerator : ILevelGenerator {
+    public class LevelGenerator {
         private const int NumGrounds = 100;
         private const float CrouchHeight = 0.7f;
 

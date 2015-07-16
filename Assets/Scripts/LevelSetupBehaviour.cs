@@ -7,23 +7,16 @@ namespace Assets.Scripts {
         public static Level ActiveLevel { get; set; }
 
         [SerializeField]
-        private JukeboxBehaviour _jukebox;
-
-        [SerializeField]
         private SpriteRenderer _backgroundRenderer;
 
-        public void Awake() {
-            ActiveLevel = Level.Alley;
-        }
-
         public void Start() {
-            ILevelInfo levelInfo = ActiveLevel == Level.Indoor
+            var levelInfo = ActiveLevel == Level.Indoor
                     ? (ILevelInfo) GetComponentsInChildren<IndoorLevelInfoBehaviour>(true).First()
                     : GetComponentsInChildren<AlleyLevelInfoBehaviour>(true).First();
 
-            if (_jukebox != null) {
-                _jukebox.GetComponent<AudioSource>().clip = levelInfo.Bgm;
-            }
+
+            JukeboxBehaviour.Instance.GetComponent<AudioSource>().clip = levelInfo.Bgm;
+            JukeboxBehaviour.Instance.StartMusic();
 
             _backgroundRenderer.sprite = levelInfo.Background;
 

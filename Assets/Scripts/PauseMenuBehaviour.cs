@@ -21,6 +21,18 @@ namespace Assets.Scripts {
         }
 
         // Called from menu button
+        public void SwitchLevel() {
+            JukeboxBehaviour.Instance.StopMusic();
+            LevelSetupBehaviour.ActiveLevel = LevelSetupBehaviour.ActiveLevel == Level.Indoor
+                ? Level.Alley
+                : Level.Indoor;
+
+            _paused = false;
+            UpdatePaused();
+            Application.LoadLevel(Application.loadedLevelName);
+        }
+
+        // Called from menu button
         public void Quit() {
             Application.Quit();
         }

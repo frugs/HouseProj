@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Assets.Scripts.LevelGeneration {
-    public class DefaultLevelGenerator : ILevelGenerator {
+    public class DefaultLevelGenerator {
         // TODO: This is pretty hacky and questionable
         private const float PlatformWidth = 2f;
         private const float SmallGapMultiplier = 0.75f;
@@ -23,11 +23,11 @@ namespace Assets.Scripts.LevelGeneration {
         private float _progress;
 
         public DefaultLevelGenerator(GameObject platformLeftPrefab,
-                              GameObject platformMiddlePrefab,
-                              GameObject platformRightPrefab,
-                              FloatingBlockFactoryBehaviour floatingBlockFactory,
-                              FishFactoryBehaviour fishFactory,
-                              Vector2 origin) {
+                                     GameObject platformMiddlePrefab,
+                                     GameObject platformRightPrefab,
+                                     FloatingBlockFactoryBehaviour floatingBlockFactory,
+                                     FishFactoryBehaviour fishFactory,
+                                     Vector2 origin) {
             _platformLeftPrefab = platformLeftPrefab;
             _platformMiddlePrefab = platformMiddlePrefab;
             _platformRightPrefab = platformRightPrefab;
