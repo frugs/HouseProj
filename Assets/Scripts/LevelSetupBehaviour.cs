@@ -4,10 +4,15 @@ using UnityEngine;
 
 namespace Assets.Scripts {
     public class LevelSetupBehaviour : MonoBehaviour {
-        public static Level ActiveLevel { get; set; }
+        private static Level _activeLevel = Level.Alley;
 
         [SerializeField]
         private SpriteRenderer _backgroundRenderer;
+
+        public static Level ActiveLevel {
+            get { return _activeLevel; }
+            set { _activeLevel = value; }
+        }
 
         public void Start() {
             var levelInfo = ActiveLevel == Level.Indoor
