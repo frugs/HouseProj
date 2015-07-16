@@ -10,6 +10,8 @@ namespace Assets.Scripts {
         IDictionary<Section, float> SectionWeights { get; }
         ISectionSanitiser SectionSanitiser { get; }
 
+        IFishPlacer FishPlacer { get; }
+
         FishFactoryBehaviour FishFactory { get; }
         ObstacleFactoryBehaviour ObstacleFactory { get; }
         FloatingBlockFactoryBehaviour FloatingBlockFactory { get; }

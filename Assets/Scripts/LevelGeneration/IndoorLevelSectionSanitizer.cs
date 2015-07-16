@@ -24,6 +24,9 @@ namespace Assets.Scripts.LevelGeneration {
             foreach (var section in sections) {
                 if (section.IsFloatingBlock()) {
                     if (previousSection.IsGap()) {
+                        if (previousSection == Section.SmallGap) {
+                            sanitised.Add(Section.SmallGap);
+                        }
                         sanitised.Add(Section.PlatformLeft);
                         sanitised.Add(Section.FloatingBlockLeft);
                     } else {

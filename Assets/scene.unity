@@ -1973,7 +1973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43877a95febc1594d9c394b0f13e48c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jukebox: {fileID: 1274125865}
   _backgroundRenderer: {fileID: 823027303}
 --- !u!4 &1575946051
 Transform:
@@ -2105,7 +2104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menu: {fileID: 57170881}
-  _jukebox: {fileID: 1274125865}
 --- !u!1 &1888032983
 GameObject:
   m_ObjectHideFlags: 0

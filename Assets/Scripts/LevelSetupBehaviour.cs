@@ -23,7 +23,8 @@ namespace Assets.Scripts {
             var levelGenerator = new LevelGenerator(Vector2.zero, levelInfo);
             var sectionGenerator = new SectionGenerator(levelInfo.SectionWeights);
             var sections = levelInfo.SectionSanitiser.SanitiseSections(sectionGenerator.GenerateSections(120));
-            levelGenerator.GenerateLevel(sections);
+            var levelSchematics = levelGenerator.GenerateLevel(sections);
+            levelInfo.FishPlacer.LayFish(Vector2.zero, levelInfo.FishFactory, levelSchematics);
         }
     }
 }

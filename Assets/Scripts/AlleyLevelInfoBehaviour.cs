@@ -45,6 +45,10 @@ namespace Assets.Scripts {
             get { return new AlleyLevelSectionSanitizer(); }
         }
 
+        public IFishPlacer FishPlacer {
+            get { return new IndoorFishPlacer(); }
+        }
+
         public FishFactoryBehaviour FishFactory {
             get { return GetComponent<FishFactoryBehaviour>(); }
         }

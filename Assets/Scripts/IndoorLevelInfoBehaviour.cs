@@ -44,6 +44,10 @@ namespace Assets.Scripts {
             get { return new IndoorLevelSectionSanitizer(); }
         }
 
+        public IFishPlacer FishPlacer {
+            get { return new IndoorFishPlacer(); }
+        }
+
         public FishFactoryBehaviour FishFactory {
             get { return GetComponent<FishFactoryBehaviour>(); }
         }
@@ -69,7 +73,7 @@ namespace Assets.Scripts {
         }
 
         public float SmallGapSize {
-            get { return 3.2f; }
+            get { return 2.5f; }
         }
 
         public float NormalGapSize {

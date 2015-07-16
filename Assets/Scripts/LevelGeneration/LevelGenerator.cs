@@ -34,7 +34,7 @@ namespace Assets.Scripts.LevelGeneration {
             _isGroundLevel = levelInfo.IsGroundLevel;
         }
 
-        public void GenerateLevel(IEnumerable<Section> sections) {
+        public IList<KeyValuePair<Section, Vector2>> GenerateLevel(IEnumerable<Section> sections) {
             if (_isGroundLevel) {
                 var groundStart = _origin - new Vector2(Camera.main.orthographicSize * Camera.main.aspect, 0f);
                 var groundProgress = 0f;
@@ -44,10 +44,13 @@ namespace Assets.Scripts.LevelGeneration {
                 }
             }
 
+            IList<KeyValuePair<Section, Vector2>> levelSchematics = new List<KeyValuePair<Section, Vector2>>();
             var progress = 0f;
             foreach (var section in sections) {
                 if (section.IsGap()) {
-                    progress += GetGapSize(section);
+                    var gapSize = GetGapSize(section);
+                    progress += gapSize;
+                    levelSchematics.Add(new KeyValuePair<Section, Vector2>(section, new Vector2(gapSize, 0f)));
                 } else {
                     var position = section.IsFloatingBlock()
                             ? _origin + new Vector2(progress, CrouchHeight)
@@ -63,9 +66,12 @@ namespace Assets.Scripts.LevelGeneration {
                         {Section.FloatingBlockMid, () => _floatingBlockFactory.CreateMiddle(position)},
                         {Section.FloatingBlockRight, () => _floatingBlockFactory.CreateRight(position)}
                     };
-                    progress += objDict[section]().GetComponent<GameObjectDimensionsBehaviour>().Size.x;
+                    var sectionSize = objDict[section]().GetComponent<GameObjectDimensionsBehaviour>().Size;
+                    progress += sectionSize.x;
+                    levelSchematics.Add(new KeyValuePair<Section, Vector2>(section, sectionSize));
                 }
             }
+            return levelSchematics;
         }
 
         private float GetGapSize(Section section) {
