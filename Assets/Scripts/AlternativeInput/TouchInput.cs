@@ -1,13 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts.AlternativeInput {
     public static class TouchInput {
         public static bool GetJump() {
-            return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x < Camera.main.pixelRect.center.x;
+            return Input.touches.Where(touch => touch.phase == TouchPhase.Began && touch.position.x < Camera.main.pixelRect.center.x).Any();
         }
 
         public static bool GetCrouch() {
-			return Input.touchCount > 0 && Input.GetTouch(0).position.x > Camera.main.pixelRect.center.x;
+            return Input.touches.Where(touch => touch.position.x > Camera.main.pixelRect.center.x).Any();
         }
     }
 }

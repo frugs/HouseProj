@@ -2,7 +2,7 @@
 using Assets.Scripts.LevelGeneration;
 using UnityEngine;
 
-namespace Assets.Scripts {
+namespace Assets.Scripts.LevelSelect {
     public interface ILevelInfo {
         Sprite Background { get; }
         AudioClip Bgm { get; }
