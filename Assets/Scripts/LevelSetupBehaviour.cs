@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Assets.Scripts.LevelGeneration;
+﻿using Assets.Scripts.LevelGeneration;
 using Assets.Scripts.LevelSelect;
 using UnityEngine;
 
@@ -16,10 +15,7 @@ namespace Assets.Scripts {
         }
 
         public void Start() {
-            var levelInfo = ActiveLevel == Level.Indoor
-                    ? (ILevelInfo) GetComponentsInChildren<IndoorLevelInfoBehaviour>(true).First()
-                    : GetComponentsInChildren<AlleyLevelInfoBehaviour>(true).First();
-
+            var levelInfo = GetActiveLevelInfo();
 
             JukeboxBehaviour.Instance.GetComponent<AudioSource>().clip = levelInfo.Bgm;
             JukeboxBehaviour.Instance.StartMusic();
@@ -31,6 +27,21 @@ namespace Assets.Scripts {
             var sections = levelInfo.SectionSanitiser.SanitiseSections(sectionGenerator.GenerateSections(120));
             var levelSchematics = levelGenerator.GenerateLevel(sections);
             levelInfo.FishPlacer.PlaceFish(Vector2.zero, levelInfo.FishFactory, levelSchematics);
+        }
+
+        private ILevelInfo GetActiveLevelInfo() {
+            switch (ActiveLevel) {
+                case Level.Alley:
+                    return GetComponentInChildren<AlleyEasyLevelInfoBehaviour>();
+                case Level.AlleyEndless:
+                    return GetComponentInChildren<AlleyLevelInfoBehaviour>();
+                case Level.Indoor:
+                    return GetComponentInChildren<IndoorEasyLevelInfoBehaviour>();
+                case Level.IndoorEndless:
+                    return GetComponentInChildren<IndoorLevelInfoBehaviour>();
+                default:
+                    return GetComponentInChildren<AlleyLevelInfoBehaviour>();
+            }
         }
     }
 }

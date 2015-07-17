@@ -1,5 +1,5 @@
 ﻿namespace Assets.Scripts {
     public enum Level {
-        Alley, Indoor
+        Alley, AlleyEndless, Indoor, IndoorEndless
     }
 }
