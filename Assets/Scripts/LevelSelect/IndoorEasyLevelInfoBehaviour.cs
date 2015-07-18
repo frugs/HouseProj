@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.LevelGeneration;
 
@@ -29,7 +28,7 @@ namespace Assets.Scripts.LevelSelect {
                 var prelim = _sectionSanitiser.SanitiseSections(sections).ToList();
 
                 var sanitised = new List<Section>();
-                for (int i = 1; i < prelim.Count; i++) {
+                for (var i = 1; i < 45; i++) {
                     var seg1 = prelim[i - 1];
                     var seg2 = prelim[i];
 
@@ -40,9 +39,14 @@ namespace Assets.Scripts.LevelSelect {
                         sanitised.Add(seg1);
                         sanitised.Add(Section.PlatformMid);
                     } else {
-                        sanitised.Add(seg1);                        
+                        sanitised.Add(seg1);
                     }
                 }
+                sanitised.Add(Section.EndLevel);
+                sanitised.Add(Section.PlatformMid);
+                sanitised.Add(Section.PlatformMid);
+                sanitised.Add(Section.PlatformMid);
+                sanitised.Add(Section.PlatformMid);
 
                 return sanitised;
             }

@@ -13,13 +13,25 @@ namespace Assets.Scripts.LevelSelect {
                     Section.SmallGap,
                     Section.LargeGap,
                     Section.LargeGap,
+                    Section.SmallGap,
                     Section.SmallObstacle,
+                    Section.SmallGap,
                     Section.LargeGap,
-                    Section.NormalGap,
+                    Section.LargeGap,
+                    Section.LargeGap,
+                    Section.SmallGap,
                     Section.LargeObstacle,
+                    Section.SmallGap,
                     Section.LargeGap,
+                    Section.LargeGap,
+                    Section.SmallGap,
                     Section.FloatingBlockMid,
-                    Section.NormalGap
+                    Section.SmallGap,
+                    Section.LargeGap,
+                    Section.LargeGap,
+                    Section.LargeGap,
+                    Section.SmallGap,
+                    Section.EndLevel
                 };
             }
         }

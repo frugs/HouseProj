@@ -15,6 +15,7 @@ namespace Assets.Scripts.LevelSelect {
         FishFactoryBehaviour FishFactory { get; }
         ObstacleFactoryBehaviour ObstacleFactory { get; }
         FloatingBlockFactoryBehaviour FloatingBlockFactory { get; }
+        EndLevelFactoryBehaviour EndLevelFactory { get; }
         
         GameObject PlatformLeftPrefab { get; }
         GameObject PlatformMiddlePrefab { get; }

@@ -18,6 +18,12 @@ namespace Assets.Scripts.LevelGeneration {
         [SerializeField]
         private ScoreDisplayBehaviour _scoreDisplayBehaviour;
 
+        private LevelRestarter _levelRestarter;
+
+        public void Awake() {
+            _levelRestarter = new LevelRestarter(this, _scoreDisplayBehaviour, _fullscreenScoreDisplayBehaviour);
+        }
+
         public GameObject CreateLeft(Vector2 position) {
             return CreateFloatingBlock(Section.FloatingBlockLeft, position);
         }
@@ -40,9 +46,8 @@ namespace Assets.Scripts.LevelGeneration {
             var obj = (GameObject) Instantiate(prefab,
                                                position,
                                                Quaternion.identity);
-            var restartLevelBehaviour = obj.GetComponent<RestartLevelBehaviour>();
-            restartLevelBehaviour.FullscreenScoreDisplayBehaviour = _fullscreenScoreDisplayBehaviour;
-            restartLevelBehaviour.ScoreDisplayBehaviour = _scoreDisplayBehaviour;
+            var restartLevelBehaviour = obj.GetComponent<KillZoneBehaviour>();
+            restartLevelBehaviour.LevelRestarter = _levelRestarter;
             return obj;
         }
     }

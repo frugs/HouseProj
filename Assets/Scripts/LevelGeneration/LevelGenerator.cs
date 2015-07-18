@@ -10,33 +10,25 @@ namespace Assets.Scripts.LevelGeneration {
         private const float CrouchHeight = 0.7f;
 
         private readonly Vector2 _origin;
+        private readonly ILevelInfo _levelInfo;
         private readonly ObstacleFactoryBehaviour _obstacleFactory;
         private readonly FloatingBlockFactoryBehaviour _floatingBlockFactory;
         private readonly GameObject _platformLeftPrefab;
         private readonly GameObject _platformMiddlePrefab;
         private readonly GameObject _platformRightPrefab;
 
-        private readonly float _smallGapSize;
-        private readonly float _normalGapSize;
-        private readonly float _largeGapSize;
-
-        private readonly bool _isGroundLevel;
-
         public LevelGenerator(Vector2 origin, ILevelInfo levelInfo) {
+            _levelInfo = levelInfo;
             _origin = origin;
-            _obstacleFactory = levelInfo.ObstacleFactory;
-            _floatingBlockFactory = levelInfo.FloatingBlockFactory;
-            _platformLeftPrefab = levelInfo.PlatformLeftPrefab;
-            _platformMiddlePrefab = levelInfo.PlatformMiddlePrefab;
-            _platformRightPrefab = levelInfo.PlatformRightPrefab;
-            _smallGapSize = levelInfo.SmallGapSize;
-            _normalGapSize = levelInfo.NormalGapSize;
-            _largeGapSize = levelInfo.LargeGapSize;
-            _isGroundLevel = levelInfo.IsGroundLevel;
+            _obstacleFactory = _levelInfo.ObstacleFactory;
+            _floatingBlockFactory = _levelInfo.FloatingBlockFactory;
+            _platformLeftPrefab = _levelInfo.PlatformLeftPrefab;
+            _platformMiddlePrefab = _levelInfo.PlatformMiddlePrefab;
+            _platformRightPrefab = _levelInfo.PlatformRightPrefab;
         }
 
         public IList<KeyValuePair<Section, Vector2>> GenerateLevel(IEnumerable<Section> sections) {
-            if (_isGroundLevel) {
+            if (_levelInfo.IsGroundLevel) {
                 var groundStart = _origin - new Vector2(Camera.main.orthographicSize * Camera.main.aspect, 0f);
                 var groundProgress = 0f;
                 for (var i = 0; i < NumGrounds; i++) {
@@ -65,7 +57,8 @@ namespace Assets.Scripts.LevelGeneration {
                         {Section.PlatformRight, () => (GameObject) Object.Instantiate(_platformRightPrefab, position, Quaternion.identity)},
                         {Section.FloatingBlockLeft, () => _floatingBlockFactory.CreateLeft(position)},
                         {Section.FloatingBlockMid, () => _floatingBlockFactory.CreateMiddle(position)},
-                        {Section.FloatingBlockRight, () => _floatingBlockFactory.CreateRight(position)}
+                        {Section.FloatingBlockRight, () => _floatingBlockFactory.CreateRight(position)},
+                        {Section.EndLevel, () => _levelInfo.EndLevelFactory.CreateEndLevel(position)}
                     };
                     var sectionSize = objDict[section]().GetComponent<GameObjectDimensionsBehaviour>().Size;
                     progress += sectionSize.x;
@@ -78,11 +71,11 @@ namespace Assets.Scripts.LevelGeneration {
         private float GetGapSize(Section section) {
             switch (section) {
                 case Section.SmallGap:
-                    return _smallGapSize;
+                    return _levelInfo.SmallGapSize;
                 case Section.NormalGap:
-                    return _normalGapSize;
+                    return _levelInfo.NormalGapSize;
                 case Section.LargeGap:
-                    return _largeGapSize;
+                    return _levelInfo.LargeGapSize;
                 default:
                     return 0;
             }

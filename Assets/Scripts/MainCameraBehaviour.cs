@@ -6,15 +6,23 @@ namespace Assets.Scripts {
         private Transform _followTransform;
 
         [SerializeField]
-        private float _lookAheadFactor = 0.5f;
+        private readonly float _lookAheadFactor = 0.5f;
+
+        private bool _isCameraLocked;
 
         public void Update() {
-            float lookAhead = Camera.main.orthographicSize * Camera.main.aspect * _lookAheadFactor;
-            transform.position = lookAhead > 1.3f
-                    ? new Vector3(_followTransform.position.x + lookAhead,
-                                  transform.position.y,
-                                  transform.position.z)
-                    : new Vector3(_followTransform.position.x, _followTransform.position.y, transform.position.z);
+            if (!_isCameraLocked) {
+                var lookAhead = Camera.main.orthographicSize * Camera.main.aspect * _lookAheadFactor;
+                transform.position = lookAhead > 1.3f
+                        ? new Vector3(_followTransform.position.x + lookAhead,
+                                      transform.position.y,
+                                      transform.position.z)
+                        : new Vector3(_followTransform.position.x, _followTransform.position.y, transform.position.z);
+            }
+        }
+
+        public void LockCamera() {
+            _isCameraLocked = true;
         }
     }
 }

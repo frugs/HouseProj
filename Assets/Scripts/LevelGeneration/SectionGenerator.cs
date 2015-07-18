@@ -15,7 +15,8 @@ namespace Assets.Scripts.LevelGeneration {
         NormalGap,
         LargeGap,
         SmallObstacle,
-        LargeObstacle
+        LargeObstacle,
+        EndLevel
     }
 
     public static class SectionExtensions {

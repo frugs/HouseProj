@@ -958,6 +958,7 @@ GameObject:
   - 114: {fileID: 556126958}
   - 114: {fileID: 556126957}
   - 114: {fileID: 556126956}
+  - 114: {fileID: 556126960}
   m_Layer: 0
   m_Name: AlleyLevelInfo
   m_TagString: Untagged
@@ -1042,6 +1043,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fishPrefab: {fileID: 127774, guid: a871ff4f42f26514cb5d6b1a4b96ece3, type: 2}
   _scoreBehaviour: {fileID: 1888032984}
+--- !u!114 &556126960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 556126954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3225cc170163d33498fff8d285a1fda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 1463971214}
+  _scoreDisplayBehaviour: {fileID: 1219053445}
+  _fullscreenScoreDisplayBehaviour: {fileID: 161865989}
+  _endLevelPrefab: {fileID: 162878, guid: 6779b4ddfba2dc34d8711f17fd764163, type: 2}
 --- !u!1 &563275583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1210,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a790e9ff269e04a98bbaa2fbb0e1c559, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 11403122, guid: a790e9ff269e04a98bbaa2fbb0e1c559, type: 2}
       propertyPath: _scoreDisplay
@@ -1219,6 +1235,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a790e9ff269e04a98bbaa2fbb0e1c559, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &614221474 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a790e9ff269e04a98bbaa2fbb0e1c559, type: 2}
+  m_PrefabInternal: {fileID: 581091574}
+--- !u!114 &614221475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614221474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7533c393fa143d42ae814c806b5a996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreDisplayBehaviour: {fileID: 1219053445}
+  _fullscreenScoreDisplayBehaviour: {fileID: 161865989}
 --- !u!1 &724225927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1264,7 @@ GameObject:
   - 114: {fileID: 724225931}
   - 114: {fileID: 724225930}
   - 114: {fileID: 724225929}
+  - 114: {fileID: 724225933}
   m_Layer: 0
   m_Name: IndoorLevelInfo
   m_TagString: Untagged
@@ -1315,6 +1349,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fishPrefab: {fileID: 191776, guid: 7627949a52eadf94db65aab71a7b086a, type: 2}
   _scoreBehaviour: {fileID: 1888032984}
+--- !u!114 &724225933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 724225927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3225cc170163d33498fff8d285a1fda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 1463971214}
+  _scoreDisplayBehaviour: {fileID: 1219053445}
+  _fullscreenScoreDisplayBehaviour: {fileID: 161865989}
+  _endLevelPrefab: {fileID: 185696, guid: 0ff37f72d27b338419fe6ef3e7e3770a, type: 2}
 --- !u!1 &823027301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,7 +1670,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_SortingOrder
@@ -1913,7 +1962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _followTransform: {fileID: 1584075619}
-  _lookAheadFactor: .5
 --- !u!1 &1575946049
 GameObject:
   m_ObjectHideFlags: 0

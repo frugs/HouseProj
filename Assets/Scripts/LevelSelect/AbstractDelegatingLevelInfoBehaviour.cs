@@ -41,6 +41,10 @@ namespace Assets.Scripts.LevelSelect {
             get { return Delegate.FloatingBlockFactory; }
         }
 
+        public EndLevelFactoryBehaviour EndLevelFactory {
+            get { return Delegate.EndLevelFactory; }
+        }
+
         public GameObject PlatformLeftPrefab {
             get { return Delegate.PlatformLeftPrefab; }
         }

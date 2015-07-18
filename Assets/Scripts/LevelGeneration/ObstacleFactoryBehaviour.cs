@@ -16,14 +16,19 @@ namespace Assets.Scripts.LevelGeneration {
         [SerializeField]
         private ScoreDisplayBehaviour _scoreDisplayBehaviour;
 
+        private LevelRestarter _levelRestarter;
+
+        public void Awake() {
+            _levelRestarter = new LevelRestarter(this, _scoreDisplayBehaviour, _fullscreenScoreDisplayBehaviour);
+        }
+
         public GameObject CreateSmallObstacle(Vector2 position) {
             var obstacle = (GameObject) Instantiate(_smallObstaclePrefab,
                                                     position,
                                                     Quaternion.identity);
 
-            var restartLevelBehaviour = obstacle.GetComponent<RestartLevelBehaviour>();
-            restartLevelBehaviour.FullscreenScoreDisplayBehaviour = _fullscreenScoreDisplayBehaviour;
-            restartLevelBehaviour.ScoreDisplayBehaviour = _scoreDisplayBehaviour;
+            var restartLevelBehaviour = obstacle.GetComponent<KillZoneBehaviour>();
+            restartLevelBehaviour.LevelRestarter = _levelRestarter;
             return obstacle;
         }
 
@@ -32,9 +37,8 @@ namespace Assets.Scripts.LevelGeneration {
                                                     position,
                                                     Quaternion.identity);
 
-            var restartLevelBehaviour = obstacle.GetComponent<RestartLevelBehaviour>();
-            restartLevelBehaviour.FullscreenScoreDisplayBehaviour = _fullscreenScoreDisplayBehaviour;
-            restartLevelBehaviour.ScoreDisplayBehaviour = _scoreDisplayBehaviour;
+            var restartLevelBehaviour = obstacle.GetComponent<KillZoneBehaviour>();
+            restartLevelBehaviour.LevelRestarter = _levelRestarter;
             return obstacle;
         }
     }

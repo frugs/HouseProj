@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.LevelSelect {
     [RequireComponent(typeof (FishFactoryBehaviour), typeof (ObstacleFactoryBehaviour), typeof (FloatingBlockFactoryBehaviour))]
+    [RequireComponent(typeof(EndLevelFactoryBehaviour))]
     public abstract class AbstractLevelInfoBehaviour : MonoBehaviour, ILevelInfo {
         [SerializeField]
         private AudioClip _bgm;
@@ -42,6 +43,10 @@ namespace Assets.Scripts.LevelSelect {
 
         public FloatingBlockFactoryBehaviour FloatingBlockFactory {
             get { return GetComponent<FloatingBlockFactoryBehaviour>(); }
+        }
+
+        public EndLevelFactoryBehaviour EndLevelFactory {
+            get { return GetComponent<EndLevelFactoryBehaviour>(); }
         }
 
         public GameObject PlatformLeftPrefab {
